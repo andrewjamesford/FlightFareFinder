@@ -33,44 +33,44 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ORG" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryu-SN-ieS">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ORG" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryu-SN-ieS">
                                             <rect key="frame" x="18" y="11" width="36" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fare" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSb-Tn-DXe">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Fare" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSb-Tn-DXe">
                                             <rect key="frame" x="544" y="11" width="33" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DST" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtX-H7-0Gc">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DST" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtX-H7-0Gc">
                                             <rect key="frame" x="109" y="11" width="53" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfx-d4-lm7">
-                                            <rect key="frame" x="193" y="0.0" width="102" height="21"/>
+                                            <rect key="frame" x="193" y="7" width="102" height="14"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="102" id="EYQ-Ax-YbG"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCd-yd-Evu">
-                                            <rect key="frame" x="193" y="16" width="102" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <rect key="frame" x="193" y="19" width="102" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ryu-SN-ieS" firstAttribute="leading" secondItem="Aam-c5-WAh" secondAttribute="leadingMargin" constant="10" id="1Ff-eK-mcD"/>
-                                        <constraint firstItem="Sfx-d4-lm7" firstAttribute="top" secondItem="Aam-c5-WAh" secondAttribute="top" id="36r-Dr-Jhv"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="DSb-Tn-DXe" secondAttribute="trailing" constant="15" id="5ab-Gf-mCu"/>
+                                        <constraint firstItem="Sfx-d4-lm7" firstAttribute="top" secondItem="Aam-c5-WAh" secondAttribute="top" constant="7" id="36r-Dr-Jhv"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="DSb-Tn-DXe" secondAttribute="trailing" constant="10" id="5ab-Gf-mCu"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Sfx-d4-lm7" secondAttribute="bottom" constant="14" id="PCZ-RZ-6JY"/>
                                         <constraint firstItem="tCd-yd-Evu" firstAttribute="leading" secondItem="Aam-c5-WAh" secondAttribute="leadingMargin" constant="185" id="XVt-Uy-lni"/>
                                         <constraint firstItem="Sfx-d4-lm7" firstAttribute="trailing" secondItem="tCd-yd-Evu" secondAttribute="trailing" id="dQ9-SK-35e"/>
@@ -82,7 +82,7 @@
                                         <constraint firstItem="tCd-yd-Evu" firstAttribute="firstBaseline" secondItem="DSb-Tn-DXe" secondAttribute="baseline" id="nQS-Ok-RYw"/>
                                         <constraint firstItem="Sfx-d4-lm7" firstAttribute="leading" secondItem="Aam-c5-WAh" secondAttribute="leadingMargin" constant="185" id="pOP-CD-DCr"/>
                                         <constraint firstItem="Sfx-d4-lm7" firstAttribute="leading" secondItem="VtX-H7-0Gc" secondAttribute="trailing" constant="31" id="sSa-qi-Kml"/>
-                                        <constraint firstItem="tCd-yd-Evu" firstAttribute="top" secondItem="Aam-c5-WAh" secondAttribute="topMargin" constant="8" id="vmk-gG-6Xc"/>
+                                        <constraint firstItem="tCd-yd-Evu" firstAttribute="top" secondItem="Aam-c5-WAh" secondAttribute="topMargin" constant="11" id="vmk-gG-6Xc"/>
                                         <constraint firstItem="VtX-H7-0Gc" firstAttribute="leading" secondItem="Aam-c5-WAh" secondAttribute="leadingMargin" constant="101" id="xvz-8P-NB0"/>
                                     </constraints>
                                     <variation key="default">

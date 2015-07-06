@@ -9,12 +9,18 @@
 import Foundation
 
 
-func stringDateToDate(stringDate: String) -> String {
+func stringDateToDate(stringDate: String, dateType: Int32) -> String {
     
     let formatter = NSDateFormatter()
     formatter.dateFormat = "yyyy-MM-dd"
     if let date = formatter.dateFromString(stringDate) {
-        formatter.dateFormat = "d MMM"
+        if (dateType == 1) {
+            formatter.dateFormat = "EEEE, d MMM"
+        }
+        else {
+            formatter.dateFormat = "d MMM"
+        }
+
         let dateString = formatter.stringFromDate(date)
         
         return dateString

@@ -11,7 +11,6 @@
 		490B7AE81B453D91004B086C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490B7AE11B453D63004B086C /* Alamofire.framework */; };
 		490B7AE91B453D91004B086C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 490B7AE11B453D63004B086C /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		490B7AEE1B453DEA004B086C /* GASService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490B7AED1B453DEA004B086C /* GASService.swift */; };
-		490B7AF01B47A1FC004B086C /* Spring in Resources */ = {isa = PBXBuildFile; fileRef = 490B7AEF1B47A1FC004B086C /* Spring */; };
 		4910F1A71B494C78008CE837 /* MyFaresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910F1A61B494C78008CE837 /* MyFaresTableViewController.swift */; };
 		4910F1AC1B494D53008CE837 /* MyFaresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910F1AB1B494D53008CE837 /* MyFaresTableViewCell.swift */; };
 		4910F1AE1B495A1D008CE837 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910F1AD1B495A1D008CE837 /* Helper.swift */; };
@@ -25,6 +24,7 @@
 		495431001B416B0E0008CC20 /* FaresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495430FF1B416B0E0008CC20 /* FaresTableViewController.swift */; };
 		498C0C351B36DF87008D2E70 /* FaresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498C0C341B36DF87008D2E70 /* FaresModel.swift */; };
 		498C0C371B388F65008D2E70 /* FaresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498C0C361B388F65008D2E70 /* FaresTableViewCell.swift */; };
+		49F5D4AE1B4A7FE300A9F7AA /* Spring in Resources */ = {isa = PBXBuildFile; fileRef = 49F5D4AD1B4A7FE300A9F7AA /* Spring */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +90,6 @@
 		490B7AC81B453384004B086C /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		490B7AD91B453D63004B086C /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-swift-2.0/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		490B7AED1B453DEA004B086C /* GASService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GASService.swift; sourceTree = "<group>"; };
-		490B7AEF1B47A1FC004B086C /* Spring */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Spring; sourceTree = "<group>"; };
 		4910F1A61B494C78008CE837 /* MyFaresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFaresTableViewController.swift; sourceTree = "<group>"; };
 		4910F1AB1B494D53008CE837 /* MyFaresTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFaresTableViewCell.swift; sourceTree = "<group>"; };
 		4910F1AD1B495A1D008CE837 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -108,6 +107,7 @@
 		495430FF1B416B0E0008CC20 /* FaresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresTableViewController.swift; sourceTree = "<group>"; };
 		498C0C341B36DF87008D2E70 /* FaresModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresModel.swift; sourceTree = "<group>"; };
 		498C0C361B388F65008D2E70 /* FaresTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresTableViewCell.swift; sourceTree = "<group>"; };
+		49F5D4AD1B4A7FE300A9F7AA /* Spring */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Spring; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,11 +143,10 @@
 		49271FA21B35240B001FD90C = {
 			isa = PBXGroup;
 			children = (
-				490B7AEF1B47A1FC004B086C /* Spring */,
-				490B7AD91B453D63004B086C /* Alamofire.xcodeproj */,
 				49271FAD1B35240B001FD90C /* FlightFareFinder */,
 				49271FC51B35240B001FD90C /* FlightFareFinderTests */,
 				49271FAC1B35240B001FD90C /* Products */,
+				490B7AD91B453D63004B086C /* Alamofire.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +162,7 @@
 		49271FAD1B35240B001FD90C /* FlightFareFinder */ = {
 			isa = PBXGroup;
 			children = (
+				49F5D4AD1B4A7FE300A9F7AA /* Spring */,
 				490B7AC81B453384004B086C /* SwiftyJSON.swift */,
 				490B7AED1B453DEA004B086C /* GASService.swift */,
 				49271FB01B35240B001FD90C /* AppDelegate.swift */,
@@ -329,7 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49271FB81B35240B001FD90C /* Main.storyboard in Resources */,
-				490B7AF01B47A1FC004B086C /* Spring in Resources */,
+				49F5D4AE1B4A7FE300A9F7AA /* Spring in Resources */,
 				49271FBD1B35240B001FD90C /* LaunchScreen.xib in Resources */,
 				49271FBA1B35240B001FD90C /* Images.xcassets in Resources */,
 			);

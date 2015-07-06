@@ -12,6 +12,10 @@ class MyFaresTableViewController: UITableViewController {
 
     var fares: JSON! = []
     
+    func refreshFares() {
+        loadFares()
+    }
+    
     func loadFares() {
         
         let orig: String = "TRG"
@@ -22,7 +26,15 @@ class MyFaresTableViewController: UITableViewController {
             self.fares = JSON["PriceAvailability"]
             
             self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
         }
+        
+        
+    }
+    
+    func openURL(url: String) {
+        let targetURL = NSURL(string: url)
+        UIApplication.sharedApplication().openURL(targetURL!)
     }
 
     
@@ -30,6 +42,8 @@ class MyFaresTableViewController: UITableViewController {
         super.viewDidLoad()
         
         loadFares()
+        
+        refreshControl?.addTarget(self, action: "loadFares", forControlEvents: UIControlEvents.ValueChanged)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -79,6 +93,12 @@ class MyFaresTableViewController: UITableViewController {
     }
     */
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let myUrl = "https://flightbookings.grabaseat.co.nz/vbook/actions/mobi/search?utm_medium=iPhone&utm_campaign=MLF&utm_source=gas"
+        openURL(myUrl)
+
+    }
+    
     /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -106,14 +126,17 @@ class MyFaresTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+
     }
     */
+
 
 }

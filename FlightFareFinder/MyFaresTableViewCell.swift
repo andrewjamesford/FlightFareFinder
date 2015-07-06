@@ -16,10 +16,9 @@ class MyFaresTableViewCell: UITableViewCell {
     
     func configureWithMyFare(fare: JSON) {
         let price = fare["@farePrice"].string ?? ""
-        let fareDate = fare["@outboundDate"].string ?? ""
+        let fareDate = fare["@outboundDate"].string ?? ""        
         
-        
-        dateLabel.text = stringDateToDate(fareDate)
+        dateLabel.text = stringDateToDate(fareDate, dateType: 1)
         priceLabel.text = "$" + price
     }
 }

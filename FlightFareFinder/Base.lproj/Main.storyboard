@@ -206,6 +206,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Deals" id="Csw-RL-a7Z"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="zZO-So-neL">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qj6-py-Okp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

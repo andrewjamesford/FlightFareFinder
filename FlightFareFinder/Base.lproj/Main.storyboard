@@ -16,7 +16,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Fares Table View Controller-->
+        <!--Specials-->
         <scene sceneID="Ttr-zF-MNJ">
             <objects>
                 <tableViewController id="fks-R7-vNC" customClass="FaresTableViewController" customModule="FlightFareFinder" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,11 +26,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FareCell" rowHeight="44" id="BJN-3g-Hs4" customClass="FaresTableViewCell" customModule="FlightFareFinder" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FareCell" rowHeight="44" id="BJN-3g-Hs4" customClass="FaresTableViewCell" customModule="FlightFareFinder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BJN-3g-Hs4" id="Aam-c5-WAh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ORG" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryu-SN-ieS">
@@ -106,13 +106,13 @@
                             <outlet property="delegate" destination="fks-R7-vNC" id="7JK-AG-tDP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="oMl-qU-Lwz"/>
+                    <navigationItem key="navigationItem" title="Specials" id="oMl-qU-Lwz"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KG1-SR-WQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1554" y="-320"/>
         </scene>
-        <!--Settings-->
+        <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="FlightFareFinder" customModuleProvider="target" sceneMemberID="viewController">
@@ -146,16 +146,93 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="I" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" selectedImage="second" systemItem="history" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
+        <!--My Deals-->
+        <scene sceneID="Yvb-MG-0RZ">
+            <objects>
+                <tableViewController id="vst-QR-IjM" customClass="MyFaresTableViewController" customModule="FlightFareFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ms9-oO-Qyi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MyFaresCell" id="wxs-im-GWY" customClass="MyFaresTableViewCell" customModule="FlightFareFinder" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="86" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wxs-im-GWY" id="AVC-SM-jju">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYS-4E-Ydw">
+                                            <rect key="frame" x="16" y="11" width="150" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="ud6-1W-pnV"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgt-br-WvQ">
+                                            <rect key="frame" x="508" y="11" width="70" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="42" id="L4v-J0-SSO"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="bgt-br-WvQ" secondAttribute="trailing" constant="10" id="5bw-zN-0m8"/>
+                                        <constraint firstItem="bgt-br-WvQ" firstAttribute="baseline" secondItem="bYS-4E-Ydw" secondAttribute="baseline" id="Hh9-4P-agN"/>
+                                        <constraint firstItem="bYS-4E-Ydw" firstAttribute="leading" secondItem="AVC-SM-jju" secondAttribute="leadingMargin" constant="8" id="iT9-oi-PgR"/>
+                                        <constraint firstItem="bgt-br-WvQ" firstAttribute="centerY" secondItem="AVC-SM-jju" secondAttribute="centerY" id="kdK-kn-m5r"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="bYS-4E-Ydw" id="BnW-3N-tCF"/>
+                                    <outlet property="priceLabel" destination="bgt-br-WvQ" id="npB-y9-d98"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vst-QR-IjM" id="uBO-Ro-cpK"/>
+                            <outlet property="delegate" destination="vst-QR-IjM" id="lQO-TQ-JOi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Deals" id="Csw-RL-a7Z"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qj6-py-Okp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1584" y="1211"/>
+        </scene>
+        <!--My Fares-->
+        <scene sceneID="Pb5-8S-2Ef">
+            <objects>
+                <navigationController title="My Fares" id="RFx-1p-DaN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="7QE-td-7CG"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yx4-nK-aJA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vst-QR-IjM" kind="relationship" relationship="rootViewController" id="7TM-YR-YIH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f8B-2a-Vro" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="1211"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -165,23 +242,31 @@
                     <connections>
                         <segue destination="AB7-9s-dvN" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="RFx-1p-DaN" kind="relationship" relationship="viewControllers" id="TgK-sd-jGG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-144" y="360"/>
         </scene>
         <!--Fares-->
         <scene sceneID="Yae-pb-YoI">
             <objects>
                 <navigationController title="Fares" automaticallyAdjustsScrollViewInsets="NO" id="AB7-9s-dvN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Fares" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Specials" image="first" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Et-z5-fgD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="hm7-Mz-cLe">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="fks-R7-vNC" kind="relationship" relationship="rootViewController" id="j80-xC-r1n"/>
                     </connections>
@@ -192,7 +277,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="I" width="30" height="30"/>
         <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
     </resources>
 </document>

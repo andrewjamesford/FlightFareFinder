@@ -33,8 +33,8 @@ class FaresTableViewCell: UITableViewCell {
         fareLabel.text = currency + price
         destinationLabel.text = destination
         originLabel.text = origin
-        fromLabel.text = bookFrom
-        toLabel.text = bookTo
+        fromLabel.text = stringDateToDate(bookFrom)
+        toLabel.text = stringDateToDate(bookTo)
         
     }
 }

@@ -14,7 +14,7 @@ func stringDateToDate(stringDate: String) -> String {
     let formatter = NSDateFormatter()
     formatter.dateFormat = "yyyy-MM-dd"
     if let date = formatter.dateFromString(stringDate) {
-        formatter.dateFormat = "dd MMM"
+        formatter.dateFormat = "d MMM"
         let dateString = formatter.stringFromDate(date)
         
         return dateString

@@ -12,17 +12,17 @@ class MyFaresTableViewController: UITableViewController {
 
     var fares: JSON! = []
     var faresReturn: JSON! = []
+    var orig: String = ""
+    var dest: String = ""
+
     
     func refreshFares() {
-        loadFares()
+        loadFares(orig, destination: dest)
     }
     
-    func loadFares() {
+    func loadFares(origin: String, destination: String) {
         
-        let orig: String = "TRG"
-        let dest: String = "AKL"
-        
-        GASService.getPrices(orig, destination: dest) { (JSON) -> () in
+        GASService.getPrices(origin, destination: destination) { (JSON) -> () in
             
             self.fares = JSON["PriceAvailability"]
             
@@ -38,11 +38,18 @@ class MyFaresTableViewController: UITableViewController {
         UIApplication.sharedApplication().openURL(targetURL!)
     }
 
+    @IBAction func swapLocationTouch(sender: AnyObject) {
+        
+        loadFares(dest, destination: orig)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadFares()
+        orig = "TRG"
+        dest = "AKL"
+        
+        loadFares(orig, destination: dest)
         
         refreshControl?.addTarget(self, action: "loadFares", forControlEvents: UIControlEvents.ValueChanged)
 

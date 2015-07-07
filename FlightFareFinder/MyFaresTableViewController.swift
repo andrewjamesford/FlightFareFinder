@@ -11,6 +11,7 @@ import UIKit
 class MyFaresTableViewController: UITableViewController {
 
     var fares: JSON! = []
+    var faresReturn: JSON! = []
     
     func refreshFares() {
         loadFares()
@@ -29,7 +30,7 @@ class MyFaresTableViewController: UITableViewController {
             self.refreshControl?.endRefreshing()
         }
         
-        
+
     }
     
     func openURL(url: String) {
@@ -79,8 +80,10 @@ class MyFaresTableViewController: UITableViewController {
         
         // Configure the cell...
         cell.configureWithMyFare(fare)
+
         
         return cell
+
 
     }
     

@@ -160,9 +160,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Fnm-vq-xet">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2ar-eX-KHx">
+                                    <rect key="frame" x="220" y="8" width="161" height="29"/>
+                                    <segments>
+                                        <segment title="TGA &gt; AKL"/>
+                                        <segment title="AKL &gt; TGA"/>
+                                    </segments>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="2ar-eX-KHx" firstAttribute="centerX" secondItem="Fnm-vq-xet" secondAttribute="centerX" id="TUJ-7C-lR1"/>
+                                <constraint firstItem="2ar-eX-KHx" firstAttribute="centerY" secondItem="Fnm-vq-xet" secondAttribute="centerY" id="t30-sc-vM2"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MyFaresCell" id="wxs-im-GWY" customClass="MyFaresTableViewCell" customModule="FlightFareFinder" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="86" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="130" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wxs-im-GWY" id="AVC-SM-jju">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -177,8 +195,8 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgt-br-WvQ">
-                                            <rect key="frame" x="508" y="11" width="70" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgt-br-WvQ">
+                                            <rect key="frame" x="507" y="11" width="42" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="42" id="L4v-J0-SSO"/>
                                             </constraints>
@@ -244,7 +262,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="RFx-1p-DaN" kind="relationship" relationship="viewControllers" id="TgK-sd-jGG"/>
-                        <segue destination="AB7-9s-dvN" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>

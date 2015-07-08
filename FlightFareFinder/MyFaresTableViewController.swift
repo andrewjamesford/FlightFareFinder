@@ -12,46 +12,66 @@ class MyFaresTableViewController: UITableViewController {
 
     var fares: JSON! = []
     var faresReturn: JSON! = []
-    var orig: String = ""
-    var dest: String = ""
-
-    
+    var orig: String = "TRG"
+    var dest: String = "AKL"
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    @IBOutlet weak var locationToggle: UISegmentedControl!
+        
     func refreshFares() {
-        loadFares(orig, destination: dest)
+        switch(locationToggle.selectedSegmentIndex) {
+        case 0:
+            loadFares(orig, destination: dest)
+        case 1:
+            loadFares(dest, destination: orig)
+        default:
+            loadFares(orig, destination: dest)
+        }
     }
     
     func loadFares(origin: String, destination: String) {
-        
         GASService.getPrices(origin, destination: destination) { (JSON) -> () in
-            
             self.fares = JSON["PriceAvailability"]
-            
             self.tableView.reloadData()
             self.refreshControl?.endRefreshing()
         }
-        
-
     }
     
     func openURL(url: String) {
         let targetURL = NSURL(string: url)
         UIApplication.sharedApplication().openURL(targetURL!)
     }
+    
+    func loadUserDefaults()
+    {
+        if ((userDefaults.objectForKey("orig") as? String) != nil)
+        {
+            orig = (userDefaults.objectForKey("orig") as? String)!
+        }
+        if ((userDefaults.objectForKey("dest") as? String) != nil)
+        {
+            dest = (userDefaults.objectForKey("dest") as? String)!
+        }
+    }
+    
 
     @IBAction func swapLocationTouch(sender: AnyObject) {
-        
-        loadFares(dest, destination: orig)
+        refreshFares()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        orig = "TRG"
-        dest = "AKL"
-        
+        loadUserDefaults()
+                    
         loadFares(orig, destination: dest)
         
-        refreshControl?.addTarget(self, action: "loadFares", forControlEvents: UIControlEvents.ValueChanged)
+        let segmentTitle1: String = orig + " > " + dest
+        let segmentTitle2: String = dest + " > " + orig
+        
+        locationToggle.setTitle(segmentTitle1, forSegmentAtIndex: 0)
+        locationToggle.setTitle(segmentTitle2, forSegmentAtIndex: 1)
+        
+        refreshControl?.addTarget(self, action: "refreshFares", forControlEvents: UIControlEvents.ValueChanged)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

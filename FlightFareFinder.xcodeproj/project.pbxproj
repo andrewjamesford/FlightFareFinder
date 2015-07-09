@@ -25,6 +25,7 @@
 		498C0C351B36DF87008D2E70 /* FaresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498C0C341B36DF87008D2E70 /* FaresModel.swift */; };
 		498C0C371B388F65008D2E70 /* FaresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498C0C361B388F65008D2E70 /* FaresTableViewCell.swift */; };
 		49F5D4AE1B4A7FE300A9F7AA /* Spring in Resources */ = {isa = PBXBuildFile; fileRef = 49F5D4AD1B4A7FE300A9F7AA /* Spring */; };
+		49F5D4B41B4E7B5D00A9F7AA /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F5D4B31B4E7B5D00A9F7AA /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		498C0C341B36DF87008D2E70 /* FaresModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresModel.swift; sourceTree = "<group>"; };
 		498C0C361B388F65008D2E70 /* FaresTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresTableViewCell.swift; sourceTree = "<group>"; };
 		49F5D4AD1B4A7FE300A9F7AA /* Spring */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Spring; sourceTree = "<group>"; };
+		49F5D4B31B4E7B5D00A9F7AA /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				498C0C361B388F65008D2E70 /* FaresTableViewCell.swift */,
 				49237A8E1B43E1AD0057212A /* Data.swift */,
 				4910F1A61B494C78008CE837 /* MyFaresTableViewController.swift */,
+				49F5D4B31B4E7B5D00A9F7AA /* SettingsTableViewController.swift */,
 				4910F1AB1B494D53008CE837 /* MyFaresTableViewCell.swift */,
 				4910F1AD1B495A1D008CE837 /* Helper.swift */,
 			);
@@ -357,6 +360,7 @@
 				49271FB11B35240B001FD90C /* AppDelegate.swift in Sources */,
 				498C0C371B388F65008D2E70 /* FaresTableViewCell.swift in Sources */,
 				490B7AC91B453384004B086C /* SwiftyJSON.swift in Sources */,
+				49F5D4B41B4E7B5D00A9F7AA /* SettingsTableViewController.swift in Sources */,
 				495431001B416B0E0008CC20 /* FaresTableViewController.swift in Sources */,
 				490B7AEE1B453DEA004B086C /* GASService.swift in Sources */,
 				4910F1AC1B494D53008CE837 /* MyFaresTableViewCell.swift in Sources */,

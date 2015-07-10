@@ -49,7 +49,7 @@ class SettingsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        airportPicker.hidden = false
+        //airportPicker.hidden = false
         
         loadUserDefaults()
 

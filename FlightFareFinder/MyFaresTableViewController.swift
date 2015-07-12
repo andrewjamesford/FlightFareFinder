@@ -15,6 +15,9 @@ class MyFaresTableViewController: UITableViewController {
     var orig: String = "TRG"
     var dest: String = "AKL"
     let userDefaults = NSUserDefaults.standardUserDefaults()
+    let myUrl = "https://flightbookings.grabaseat.co.nz/vbook/actions/ext-search"
+//    let myUrl = "https://flightbookings.grabaseat.co.nz"
+//    let myUrl = "https://flightbookings.grabaseat.co.nz/vbook/actions/mobi/search?utm_medium=iPhone&utm_campaign=MLF&utm_source=gas"
     @IBOutlet weak var locationToggle: UISegmentedControl!
         
     func refreshFares() {
@@ -36,10 +39,36 @@ class MyFaresTableViewController: UITableViewController {
         }
     }
     
-    func openURL(url: String) {
-        let targetURL = NSURL(string: url)
+    func openURL(url: String, month: String, day: String) {
+        
+        let params: String = "searchLegs%5B0%5D.originPoint=" + orig + "&searchLegs%5B0%5D.destinationPoint=" + dest + "&searchLegs%5B1%5D.originPoint=" + dest + "&searchLegs%5B1%5D.destinationPoint=" + orig + "&bookingClass=economy&searchLegs%5B0%5D.tripStartMonth=" + month + "&searchLegs%5B0%5D.tripStartDate=" + day + "&searchLegs%5B1%5D.tripStartMonth=" + month + "&searchLegs%5B1%5D.tripStartDate=" + day + "&searchType=flexible&tripType=return&promoCode=&gasToken=&productPreference=DS&displaySearchForFlight=true"
+        let combinedUrl = url + "?" + params
+        let targetURL = NSURL(string: combinedUrl)
         UIApplication.sharedApplication().openURL(targetURL!)
+
     }
+    
+//    func dateAdd()
+//    {
+//        let userCalendar = NSCalendar.currentCalendar()
+//        
+//        let flightDayComponents = NSDateComponents()
+//        flightDayComponents.year = 2015
+//        flightDayComponents.month = 2
+//        flightDayComponents.day = 14
+//        let flightDay = userCalendar.dateFromComponents(flightDayComponents)!
+//        
+//        let dayCalendarUnit: NS = .NSCalendarUnitDay
+//        
+//        let tenDaysFromNow = userCalendar.dateByAddingUnit(
+//            dayCalendarUnit,
+//            value: 1,
+//            toDate: NSDate(),
+//            options: nil)!
+//        
+//
+//    
+//    }
     
     func loadUserDefaults()
     {
@@ -124,8 +153,14 @@ class MyFaresTableViewController: UITableViewController {
     */
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let myUrl = "https://flightbookings.grabaseat.co.nz/vbook/actions/mobi/search?utm_medium=iPhone&utm_campaign=MLF&utm_source=gas"
-        openURL(myUrl)
+
+        let selectedFare = fares[indexPath.row]
+        
+        let fareDate = selectedFare["@outboundDate"].string ?? ""
+        
+        // Convert date to month and day paramerters
+        
+        openURL(myUrl, month: "Oct", day: "6")
 
     }
     

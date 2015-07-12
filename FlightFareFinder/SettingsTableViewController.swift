@@ -9,10 +9,6 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
-
-    @IBOutlet weak var origText: UITextField!
-    @IBOutlet weak var airportPicker: UIPickerView!
-    
     
     let userDefaults = NSUserDefaults.standardUserDefaults()
     var orig: String = "TRG"
@@ -20,7 +16,36 @@ class SettingsTableViewController: UITableViewController {
     let airportsNames = ["Auckland", "Tauranga"]
     let airportsKeys = ["AKL", "TGA"]
     let airports = ["Auckland":"AKL", "Tauranga":"TGA"]
+
+    var settingsList: JSON = [
+        [
+            "title": "Origin",
+            "key": "orig",
+            "detail": "TGA",
+            "type": "airport"
+        ],
+        [
+            "title": "Destination",
+            "key": "dest",
+            "detail": "AKL",
+            "type": "airport"
+        ],
+        [
+            "title": "Alert amount",
+            "key": "amount",
+            "detail": "$49",
+            "type": "amount"
+        ],
+        [
+            "title": "Date from",
+            "key": "dateFrom",
+            "detail": "1/Dec/2015",
+            "type": "date"
+        ]
+
+    ]
     
+
     func loadUserDefaults()
     {
         if ((userDefaults.objectForKey("orig") as? String) != nil)
@@ -75,44 +100,27 @@ class SettingsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return settingsList.count
     }
 
-    
-    // returns the number of 'columns' to display.
-    func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int{
-        return 1
-    }
-    
-    // returns the # of rows in each component..
-    func pickerView(pickerView: UIPickerView!, numberOfRowsInComponent component: Int) -> Int{
-        return airports.count
-    }
-    
-//    func pickerView(pickerView: UIPickerView!, titleForRow row: Int, forComponent component: Int) -> String! {
-//        return airports[row]
-//    }
-    
-    func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int)
-    {
-        //textfieldBizCat.text = bizCat[row]
-        airportPicker.hidden = true;
-    }
-    
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        airportPicker.hidden = false
-        return false
-    }
-    
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+
+        let cell = tableView.dequeueReusableCellWithIdentifier("SettingsCell") as! SettingsTableViewCell!
 
         // Configure the cell...
-
+        let setting = settingsList[indexPath.row]
+        
+        cell.configureWithSetting(setting)
+        
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        
+    }
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -149,14 +157,19 @@ class SettingsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "ViewSettingsDetail"{
+            let vc = segue.destinationViewController as! SettingsViewController
+
+        }
     }
-    */
+    
 
 }

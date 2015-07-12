@@ -21,6 +21,8 @@
 		49271FBA1B35240B001FD90C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49271FB91B35240B001FD90C /* Images.xcassets */; };
 		49271FBD1B35240B001FD90C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49271FBB1B35240B001FD90C /* LaunchScreen.xib */; };
 		49271FC91B35240B001FD90C /* FlightFareFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49271FC81B35240B001FD90C /* FlightFareFinderTests.swift */; };
+		495375D41B50E1DA00B56C36 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495375D31B50E1DA00B56C36 /* SettingsTableViewCell.swift */; };
+		495375D61B51300700B56C36 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495375D51B51300700B56C36 /* SettingsViewController.swift */; };
 		495431001B416B0E0008CC20 /* FaresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495430FF1B416B0E0008CC20 /* FaresTableViewController.swift */; };
 		498C0C351B36DF87008D2E70 /* FaresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498C0C341B36DF87008D2E70 /* FaresModel.swift */; };
 		498C0C371B388F65008D2E70 /* FaresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498C0C361B388F65008D2E70 /* FaresTableViewCell.swift */; };
@@ -105,6 +107,8 @@
 		49271FC21B35240B001FD90C /* FlightFareFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightFareFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49271FC71B35240B001FD90C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49271FC81B35240B001FD90C /* FlightFareFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightFareFinderTests.swift; sourceTree = "<group>"; };
+		495375D31B50E1DA00B56C36 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		495375D51B51300700B56C36 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		495430FF1B416B0E0008CC20 /* FaresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresTableViewController.swift; sourceTree = "<group>"; };
 		498C0C341B36DF87008D2E70 /* FaresModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresModel.swift; sourceTree = "<group>"; };
 		498C0C361B388F65008D2E70 /* FaresTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresTableViewCell.swift; sourceTree = "<group>"; };
@@ -179,8 +183,10 @@
 				49237A8E1B43E1AD0057212A /* Data.swift */,
 				4910F1A61B494C78008CE837 /* MyFaresTableViewController.swift */,
 				49F5D4B31B4E7B5D00A9F7AA /* SettingsTableViewController.swift */,
+				495375D51B51300700B56C36 /* SettingsViewController.swift */,
 				4910F1AB1B494D53008CE837 /* MyFaresTableViewCell.swift */,
 				4910F1AD1B495A1D008CE837 /* Helper.swift */,
+				495375D31B50E1DA00B56C36 /* SettingsTableViewCell.swift */,
 			);
 			path = FlightFareFinder;
 			sourceTree = "<group>";
@@ -357,9 +363,11 @@
 				4910F1A71B494C78008CE837 /* MyFaresTableViewController.swift in Sources */,
 				49237A8F1B43E1AD0057212A /* Data.swift in Sources */,
 				498C0C351B36DF87008D2E70 /* FaresModel.swift in Sources */,
+				495375D41B50E1DA00B56C36 /* SettingsTableViewCell.swift in Sources */,
 				49271FB11B35240B001FD90C /* AppDelegate.swift in Sources */,
 				498C0C371B388F65008D2E70 /* FaresTableViewCell.swift in Sources */,
 				490B7AC91B453384004B086C /* SwiftyJSON.swift in Sources */,
+				495375D61B51300700B56C36 /* SettingsViewController.swift in Sources */,
 				49F5D4B41B4E7B5D00A9F7AA /* SettingsTableViewController.swift in Sources */,
 				495431001B416B0E0008CC20 /* FaresTableViewController.swift in Sources */,
 				490B7AEE1B453DEA004B086C /* GASService.swift in Sources */,

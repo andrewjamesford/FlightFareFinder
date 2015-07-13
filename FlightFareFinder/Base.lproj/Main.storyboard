@@ -205,7 +205,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.99205273389816284" green="0.99221855401992798" blue="0.99202936887741089" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingsCell" textLabel="bo0-Zi-fcP" detailTextLabel="rjc-Vw-LMt" style="IBUITableViewCellStyleValue1" id="R8v-kY-TqH" customClass="SettingsTableViewCell" customModule="FlightFareFinder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>

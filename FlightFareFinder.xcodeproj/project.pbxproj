@@ -23,6 +23,7 @@
 		49271FC91B35240B001FD90C /* FlightFareFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49271FC81B35240B001FD90C /* FlightFareFinderTests.swift */; };
 		495375D41B50E1DA00B56C36 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495375D31B50E1DA00B56C36 /* SettingsTableViewCell.swift */; };
 		495375D61B51300700B56C36 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495375D51B51300700B56C36 /* SettingsViewController.swift */; };
+		495375D81B53BBA600B56C36 /* Punctual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495375D71B53BBA600B56C36 /* Punctual.swift */; };
 		495431001B416B0E0008CC20 /* FaresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495430FF1B416B0E0008CC20 /* FaresTableViewController.swift */; };
 		498C0C351B36DF87008D2E70 /* FaresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498C0C341B36DF87008D2E70 /* FaresModel.swift */; };
 		498C0C371B388F65008D2E70 /* FaresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498C0C361B388F65008D2E70 /* FaresTableViewCell.swift */; };
@@ -109,6 +110,7 @@
 		49271FC81B35240B001FD90C /* FlightFareFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightFareFinderTests.swift; sourceTree = "<group>"; };
 		495375D31B50E1DA00B56C36 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		495375D51B51300700B56C36 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		495375D71B53BBA600B56C36 /* Punctual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punctual.swift; sourceTree = "<group>"; };
 		495430FF1B416B0E0008CC20 /* FaresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresTableViewController.swift; sourceTree = "<group>"; };
 		498C0C341B36DF87008D2E70 /* FaresModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresModel.swift; sourceTree = "<group>"; };
 		498C0C361B388F65008D2E70 /* FaresTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresTableViewCell.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				49F5D4B31B4E7B5D00A9F7AA /* SettingsTableViewController.swift */,
 				495375D51B51300700B56C36 /* SettingsViewController.swift */,
 				4910F1AB1B494D53008CE837 /* MyFaresTableViewCell.swift */,
+				495375D71B53BBA600B56C36 /* Punctual.swift */,
 				4910F1AD1B495A1D008CE837 /* Helper.swift */,
 				495375D31B50E1DA00B56C36 /* SettingsTableViewCell.swift */,
 			);
@@ -359,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4910F1AE1B495A1D008CE837 /* Helper.swift in Sources */,
+				495375D81B53BBA600B56C36 /* Punctual.swift in Sources */,
 				49271FB51B35240B001FD90C /* SecondViewController.swift in Sources */,
 				4910F1A71B494C78008CE837 /* MyFaresTableViewController.swift in Sources */,
 				49237A8F1B43E1AD0057212A /* Data.swift in Sources */,

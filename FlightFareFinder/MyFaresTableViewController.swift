@@ -16,8 +16,7 @@ class MyFaresTableViewController: UITableViewController {
     var dest: String = "AKL"
     let userDefaults = NSUserDefaults.standardUserDefaults()
     let myUrl = "https://flightbookings.grabaseat.co.nz/vbook/actions/ext-search"
-//    let myUrl = "https://flightbookings.grabaseat.co.nz"
-//    let myUrl = "https://flightbookings.grabaseat.co.nz/vbook/actions/mobi/search?utm_medium=iPhone&utm_campaign=MLF&utm_source=gas"
+    
     @IBOutlet weak var locationToggle: UISegmentedControl!
         
     func refreshFares() {
@@ -39,36 +38,31 @@ class MyFaresTableViewController: UITableViewController {
         }
     }
     
-    func openURL(url: String, month: String, day: String) {
+    func openURL(url: String, date: NSDate) {
         
-        let params: String = "searchLegs%5B0%5D.originPoint=" + orig + "&searchLegs%5B0%5D.destinationPoint=" + dest + "&searchLegs%5B1%5D.originPoint=" + dest + "&searchLegs%5B1%5D.destinationPoint=" + orig + "&bookingClass=economy&searchLegs%5B0%5D.tripStartMonth=" + month + "&searchLegs%5B0%5D.tripStartDate=" + day + "&searchLegs%5B1%5D.tripStartMonth=" + month + "&searchLegs%5B1%5D.tripStartDate=" + day + "&searchType=flexible&tripType=return&promoCode=&gasToken=&productPreference=DS&displaySearchForFlight=true"
+        let nextDay: NSDate = (date + 1.day)!
+        
+        let dateFormatterMonth = NSDateFormatter()
+        dateFormatterMonth.dateFormat = "MMM"
+        let urlMonthString: String = dateFormatterMonth.stringFromDate(date)
+        let urlMonthStringNext: String = dateFormatterMonth.stringFromDate(nextDay)
+        print(urlMonthString)
+        print(urlMonthStringNext)
+        
+        let dateFormatterDay = NSDateFormatter()
+        dateFormatterDay.dateFormat = "dd"
+        let urlDayString: String = dateFormatterDay.stringFromDate(date)
+        let urlDayStringNext: String = dateFormatterDay.stringFromDate(nextDay)
+        print(urlDayString)
+        print(urlDayStringNext)
+        
+        let params: String = "searchLegs%5B0%5D.originPoint=" + orig + "&searchLegs%5B0%5D.destinationPoint=" + dest + "&searchLegs%5B1%5D.originPoint=" + dest + "&searchLegs%5B1%5D.destinationPoint=" + orig + "&bookingClass=economy&searchLegs%5B0%5D.tripStartMonth=" + urlMonthString + "&searchLegs%5B0%5D.tripStartDate=" + urlDayString + "&searchLegs%5B1%5D.tripStartMonth=" + urlMonthStringNext + "&searchLegs%5B1%5D.tripStartDate=" + urlDayStringNext + "&searchType=flexible&tripType=return&promoCode=&gasToken=&productPreference=DS&displaySearchForFlight=true"
         let combinedUrl = url + "?" + params
         let targetURL = NSURL(string: combinedUrl)
+        
         UIApplication.sharedApplication().openURL(targetURL!)
 
     }
-    
-//    func dateAdd()
-//    {
-//        let userCalendar = NSCalendar.currentCalendar()
-//        
-//        let flightDayComponents = NSDateComponents()
-//        flightDayComponents.year = 2015
-//        flightDayComponents.month = 2
-//        flightDayComponents.day = 14
-//        let flightDay = userCalendar.dateFromComponents(flightDayComponents)!
-//        
-//        let dayCalendarUnit: NS = .NSCalendarUnitDay
-//        
-//        let tenDaysFromNow = userCalendar.dateByAddingUnit(
-//            dayCalendarUnit,
-//            value: 1,
-//            toDate: NSDate(),
-//            options: nil)!
-//        
-//
-//    
-//    }
     
     func loadUserDefaults()
     {
@@ -159,9 +153,16 @@ class MyFaresTableViewController: UITableViewController {
         let fareDate = selectedFare["@outboundDate"].string ?? ""
         
         // Convert date to month and day paramerters
+        if (fareDate != "")
+        {
+            let dateStringFormatter = NSDateFormatter()
+            dateStringFormatter.dateFormat = "yyyy-MM-dd"
+            dateStringFormatter.locale = NSLocale.currentLocale()
+            let d = dateStringFormatter.dateFromString(fareDate)!
+            
+            openURL(myUrl, date: d)
+        }
         
-        openURL(myUrl, month: "Oct", day: "6")
-
     }
     
     /*

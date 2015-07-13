@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settings = UIUserNotificationSettings(forTypes: types, categories: nil)
         application.registerUserNotificationSettings(settings)
 
-        
+        UIScrollView.appearance().backgroundColor = UIColor.whiteColor()
         
         return true
     }

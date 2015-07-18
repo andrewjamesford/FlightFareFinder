@@ -14,24 +14,17 @@
 		4910F1A71B494C78008CE837 /* MyFaresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910F1A61B494C78008CE837 /* MyFaresTableViewController.swift */; };
 		4910F1AC1B494D53008CE837 /* MyFaresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910F1AB1B494D53008CE837 /* MyFaresTableViewCell.swift */; };
 		4910F1AE1B495A1D008CE837 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910F1AD1B495A1D008CE837 /* Helper.swift */; };
-		49237A8F1B43E1AD0057212A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49237A8E1B43E1AD0057212A /* Data.swift */; };
 		49271FB11B35240B001FD90C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49271FB01B35240B001FD90C /* AppDelegate.swift */; };
-		49271FB51B35240B001FD90C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49271FB41B35240B001FD90C /* SecondViewController.swift */; };
 		49271FB81B35240B001FD90C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49271FB61B35240B001FD90C /* Main.storyboard */; };
 		49271FBA1B35240B001FD90C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49271FB91B35240B001FD90C /* Images.xcassets */; };
 		49271FBD1B35240B001FD90C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49271FBB1B35240B001FD90C /* LaunchScreen.xib */; };
 		49271FC91B35240B001FD90C /* FlightFareFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49271FC81B35240B001FD90C /* FlightFareFinderTests.swift */; };
-		495375D41B50E1DA00B56C36 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495375D31B50E1DA00B56C36 /* SettingsTableViewCell.swift */; };
 		495375D61B51300700B56C36 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495375D51B51300700B56C36 /* SettingsViewController.swift */; };
 		495375D81B53BBA600B56C36 /* Punctual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495375D71B53BBA600B56C36 /* Punctual.swift */; };
-		495431001B416B0E0008CC20 /* FaresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495430FF1B416B0E0008CC20 /* FaresTableViewController.swift */; };
 		49797E361B552C1C00250BC8 /* SettingsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49797E351B552C1C00250BC8 /* SettingsForm.swift */; };
 		49797E3E1B5533BD00250BC8 /* FXForms.m in Sources */ = {isa = PBXBuildFile; fileRef = 49797E3D1B5533BD00250BC8 /* FXForms.m */; };
 		49797E421B55371D00250BC8 /* ISO3166CountryValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49797E411B55371D00250BC8 /* ISO3166CountryValueTransformer.swift */; };
-		498C0C351B36DF87008D2E70 /* FaresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498C0C341B36DF87008D2E70 /* FaresModel.swift */; };
-		498C0C371B388F65008D2E70 /* FaresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498C0C361B388F65008D2E70 /* FaresTableViewCell.swift */; };
 		49F5D4AE1B4A7FE300A9F7AA /* Spring in Resources */ = {isa = PBXBuildFile; fileRef = 49F5D4AD1B4A7FE300A9F7AA /* Spring */; };
-		49F5D4B41B4E7B5D00A9F7AA /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F5D4B31B4E7B5D00A9F7AA /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,30 +93,23 @@
 		4910F1A61B494C78008CE837 /* MyFaresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFaresTableViewController.swift; sourceTree = "<group>"; };
 		4910F1AB1B494D53008CE837 /* MyFaresTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFaresTableViewCell.swift; sourceTree = "<group>"; };
 		4910F1AD1B495A1D008CE837 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		49237A8E1B43E1AD0057212A /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		49271FAB1B35240B001FD90C /* FlightFareFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightFareFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49271FAF1B35240B001FD90C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49271FB01B35240B001FD90C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49271FB41B35240B001FD90C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		49271FB71B35240B001FD90C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49271FB91B35240B001FD90C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		49271FBC1B35240B001FD90C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		49271FC21B35240B001FD90C /* FlightFareFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightFareFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49271FC71B35240B001FD90C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49271FC81B35240B001FD90C /* FlightFareFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightFareFinderTests.swift; sourceTree = "<group>"; };
-		495375D31B50E1DA00B56C36 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		495375D51B51300700B56C36 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		495375D71B53BBA600B56C36 /* Punctual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punctual.swift; sourceTree = "<group>"; };
-		495430FF1B416B0E0008CC20 /* FaresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresTableViewController.swift; sourceTree = "<group>"; };
 		49797E351B552C1C00250BC8 /* SettingsForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsForm.swift; sourceTree = "<group>"; };
 		49797E3C1B5533BD00250BC8 /* FXForms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXForms.h; sourceTree = "<group>"; };
 		49797E3D1B5533BD00250BC8 /* FXForms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXForms.m; sourceTree = "<group>"; };
 		49797E401B55367900250BC8 /* FlightFareFinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlightFareFinder-Bridging-Header.h"; sourceTree = "<group>"; };
 		49797E411B55371D00250BC8 /* ISO3166CountryValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO3166CountryValueTransformer.swift; sourceTree = "<group>"; };
-		498C0C341B36DF87008D2E70 /* FaresModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresModel.swift; sourceTree = "<group>"; };
-		498C0C361B388F65008D2E70 /* FaresTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresTableViewCell.swift; sourceTree = "<group>"; };
 		49F5D4AD1B4A7FE300A9F7AA /* Spring */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Spring; sourceTree = "<group>"; };
-		49F5D4B31B4E7B5D00A9F7AA /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,8 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				49797E351B552C1C00250BC8 /* SettingsForm.swift */,
-				498C0C341B36DF87008D2E70 /* FaresModel.swift */,
-				49237A8E1B43E1AD0057212A /* Data.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -251,9 +235,7 @@
 		49797E381B552D1800250BC8 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
-				498C0C361B388F65008D2E70 /* FaresTableViewCell.swift */,
 				4910F1AB1B494D53008CE837 /* MyFaresTableViewCell.swift */,
-				495375D31B50E1DA00B56C36 /* SettingsTableViewCell.swift */,
 			);
 			name = TableCells;
 			sourceTree = "<group>";
@@ -261,10 +243,7 @@
 		49797E391B552D3200250BC8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				495430FF1B416B0E0008CC20 /* FaresTableViewController.swift */,
-				49271FB41B35240B001FD90C /* SecondViewController.swift */,
 				4910F1A61B494C78008CE837 /* MyFaresTableViewController.swift */,
-				49F5D4B31B4E7B5D00A9F7AA /* SettingsTableViewController.swift */,
 				495375D51B51300700B56C36 /* SettingsViewController.swift */,
 			);
 			name = Controllers;
@@ -427,17 +406,10 @@
 				495375D81B53BBA600B56C36 /* Punctual.swift in Sources */,
 				49797E361B552C1C00250BC8 /* SettingsForm.swift in Sources */,
 				49797E421B55371D00250BC8 /* ISO3166CountryValueTransformer.swift in Sources */,
-				49271FB51B35240B001FD90C /* SecondViewController.swift in Sources */,
 				4910F1A71B494C78008CE837 /* MyFaresTableViewController.swift in Sources */,
-				49237A8F1B43E1AD0057212A /* Data.swift in Sources */,
-				498C0C351B36DF87008D2E70 /* FaresModel.swift in Sources */,
-				495375D41B50E1DA00B56C36 /* SettingsTableViewCell.swift in Sources */,
 				49271FB11B35240B001FD90C /* AppDelegate.swift in Sources */,
-				498C0C371B388F65008D2E70 /* FaresTableViewCell.swift in Sources */,
 				490B7AC91B453384004B086C /* SwiftyJSON.swift in Sources */,
 				495375D61B51300700B56C36 /* SettingsViewController.swift in Sources */,
-				49F5D4B41B4E7B5D00A9F7AA /* SettingsTableViewController.swift in Sources */,
-				495431001B416B0E0008CC20 /* FaresTableViewController.swift in Sources */,
 				490B7AEE1B453DEA004B086C /* GASService.swift in Sources */,
 				4910F1AC1B494D53008CE837 /* MyFaresTableViewCell.swift in Sources */,
 			);

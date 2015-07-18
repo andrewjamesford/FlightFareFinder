@@ -9,12 +9,8 @@
 import Alamofire
 
 struct GASService {
-    // Doc: http://www.grabaseat.co.nz
-    private static let baseURL = "http://grabaseat.co.nz"
-    // https://grabaseat.co.nz/getPrices?origin=TRG&destination=AKL&json=y
-    // https://grabaseat.co.nz/getSmokingSpecials.json?json
-    // http://grabaseat.co.nz/getLowList.json
-    // http://grabaseat.co.nz/getSpecials.json
+
+    private static let baseURL = "https://grabaseat.co.nz"
     
     private enum ResourcePath: CustomStringConvertible {
         case SmokingSpecials

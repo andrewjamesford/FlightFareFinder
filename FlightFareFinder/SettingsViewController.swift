@@ -14,22 +14,29 @@ class SettingsViewController: FXFormViewController {
     var orig: String?
     var dest: String?
     
+    
     override func awakeFromNib() {
 
-        loadUserDefaults()
-        
-        //SettingsForm.setValue(orig, forKey: "origen")
-        //SettingsForm.setValue(dest, forKey: "destination")
-        
         formController.form = SettingsForm()
         
-
+        reloadForm()
+        
+    }
+    
+    func reloadForm() {
+        
+        loadUserDefaults()
+        
+        let form = formController.form as! SettingsForm
+        form.origin = orig
+        form.destination = dest
+        form.dateFrom = NSDate()
+        form.alertAmount = 0
         
     }
     
     func loadUserDefaults()
     {
-        
         if ((userDefaults.objectForKey("orig") as? String) != nil)
         {
             orig = (userDefaults.objectForKey("orig") as? String)!

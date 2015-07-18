@@ -13,10 +13,12 @@ class SettingsForm: NSObject, FXForm {
 
     var origin: String?
     var destination: String?
-    var alertAmount: Int = 0
+    var alertAmount: Int?
     var dateFrom: NSDate?
     var notificationsEnabled = false
     let airports = ["AKL", "TRG", "WLG", "CHC", "ZQN", "HLZ"]
+
+
     
     //because we want to rearrange how this form
     //is displayed, we've implemented the fields array

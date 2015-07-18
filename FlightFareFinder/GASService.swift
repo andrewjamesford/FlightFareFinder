@@ -48,7 +48,8 @@ struct GASService {
     static func getPrices(origin: String, destination: String, response: (JSON) -> ()) {
         
         let urlString = baseURL + ResourcePath.Prices(origin: origin, destination: destination).description
-
+        print("urlstring=" + urlString)
+        
         Alamofire.request(.GET, URLString: urlString).responseJSON { (_, _, data, _) in
             let prices = JSON(data ?? [])
             response(prices)

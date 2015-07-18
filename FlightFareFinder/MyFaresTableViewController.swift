@@ -31,6 +31,15 @@ class MyFaresTableViewController: UITableViewController {
     }
     
     func loadFares(origin: String, destination: String) {
+        print("loadfares")
+        let segmentTitle1: String = origin + " > " + destination
+        print(segmentTitle1)
+        let segmentTitle2: String = destination + " > " + origin
+        print(segmentTitle2)
+        
+        locationToggle.setTitle(segmentTitle1, forSegmentAtIndex: 0)
+        locationToggle.setTitle(segmentTitle2, forSegmentAtIndex: 1)
+        
         GASService.getPrices(origin, destination: destination) { (JSON) -> () in
             self.fares = JSON["PriceAvailability"]
             self.tableView.reloadData()
@@ -66,13 +75,16 @@ class MyFaresTableViewController: UITableViewController {
     
     func loadUserDefaults()
     {
+        print("loaduserdefaults")
         if ((userDefaults.objectForKey("orig") as? String) != nil)
         {
             orig = (userDefaults.objectForKey("orig") as? String)!
+            print(orig)
         }
         if ((userDefaults.objectForKey("dest") as? String) != nil)
         {
             dest = (userDefaults.objectForKey("dest") as? String)!
+            print(dest)
         }
     }
     
@@ -88,12 +100,6 @@ class MyFaresTableViewController: UITableViewController {
                     
         loadFares(orig, destination: dest)
         
-        let segmentTitle1: String = orig + " > " + dest
-        let segmentTitle2: String = dest + " > " + orig
-        
-        locationToggle.setTitle(segmentTitle1, forSegmentAtIndex: 0)
-        locationToggle.setTitle(segmentTitle2, forSegmentAtIndex: 1)
-        
         refreshControl?.addTarget(self, action: "refreshFares", forControlEvents: UIControlEvents.ValueChanged)
 
         // Uncomment the following line to preserve selection between presentations
@@ -101,6 +107,13 @@ class MyFaresTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+//        super.viewDidAppear(<#T##animated: Bool##Bool#>)
+        loadUserDefaults()
+        
+        loadFares(orig, destination: dest)
     }
 
     override func didReceiveMemoryWarning() {

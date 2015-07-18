@@ -15,15 +15,8 @@ class SettingsForm: NSObject, FXForm {
     var destination: String?
     var alertAmount: Int = 0
     var dateFrom: NSDate?
-    
-    
-    enum Airports: String {
-        case Auckland = "AKL"
-        case Tauranga = "TGA"
-        case Wellington = "WGN"
-    }
-    
-    
+    var notificationsEnabled = false
+    let airports = ["AKL", "TRG", "WLG", "CHC", "ZQN", "HLZ"]
     
     //because we want to rearrange how this form
     //is displayed, we've implemented the fields array
@@ -35,19 +28,24 @@ class SettingsForm: NSObject, FXForm {
         return [
             
             [FXFormFieldKey: "origin",
+                FXFormFieldHeader: "Locations",
                 FXFormFieldTitle: "Origin",
-                FXFormFieldOptions: ["Auckland", "Tauranga", "Wellington"],
+                FXFormFieldOptions: airports,
                 FXFormFieldCell: FXFormOptionPickerCell.self],
             
             [FXFormFieldKey: "destination",
                 FXFormFieldTitle: "Destination",
-                FXFormFieldOptions: ["Auckland", "Tauranga", "Wellington"],
+                FXFormFieldOptions: airports,
                 FXFormFieldCell: FXFormOptionPickerCell.self],
             
+            [FXFormFieldKey: "notificationsEnabled",
+                FXFormFieldHeader: "Notifications",
+                FXFormFieldTitle: "Enabled",
+                FXFormFieldType: FXFormFieldTypeBoolean],
             
             [FXFormFieldKey: "alertAmount",
                 FXFormFieldTitle: "Alert Amount",
-                FXFormFieldOptions: ["$49", "$59", "$69", "$79", "$89", "$99", "$109"],
+                FXFormFieldOptions: ["49", "59", "69", "79", "89", "99", "109"],
                 FXFormFieldCell: FXFormOptionPickerCell.self],
             
             "dateFrom",
@@ -57,7 +55,7 @@ class SettingsForm: NSObject, FXForm {
             //object in the responder chain that implements the submitForm
             //method, which in this case would be the AppDelegate
             
-            [FXFormFieldTitle: "Submit", FXFormFieldHeader: "", FXFormFieldAction: "submitRegistrationForm:"],
+            [FXFormFieldTitle: "Save", FXFormFieldHeader: "", FXFormFieldAction: "submitSettingsForm:"],
         ]
     }
 }

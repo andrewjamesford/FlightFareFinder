@@ -13,7 +13,9 @@ class SettingsViewController: FXFormViewController {
     let userDefaults = NSUserDefaults.standardUserDefaults()
     var orig: String?
     var dest: String?
-    
+    var alertAmount = 0
+    var dateFrom: NSDate?
+    var notificationsEnabled = false
     
     override func awakeFromNib() {
 
@@ -30,8 +32,9 @@ class SettingsViewController: FXFormViewController {
         let form = formController.form as! SettingsForm
         form.origin = orig
         form.destination = dest
-        form.dateFrom = NSDate()
-        form.alertAmount = 0
+        form.dateFrom = dateFrom
+        form.alertAmount = alertAmount
+        form.notificationsEnabled = notificationsEnabled
         
     }
     
@@ -45,6 +48,19 @@ class SettingsViewController: FXFormViewController {
         {
             dest = (userDefaults.objectForKey("dest") as? String)!
         }
+        if ((userDefaults.objectForKey("alertAmount") as? NSInteger) != nil)
+        {
+            alertAmount = (userDefaults.objectForKey("alertAmount") as? NSInteger)!
+        }
+        if ((userDefaults.objectForKey("dateFrom") as? NSDate) != nil)
+        {
+            dateFrom = (userDefaults.objectForKey("dateFrom") as? NSDate)!
+        }
+        if ((userDefaults.objectForKey("notificationsEnabled") as? Bool) != nil)
+        {
+            notificationsEnabled = (userDefaults.objectForKey("notificationsEnabled") as? Bool)!
+        }
+        
     }
 
     func submitSettingsForm(cell: FXFormFieldCellProtocol) {
@@ -87,7 +103,7 @@ class SettingsViewController: FXFormViewController {
                 userDefaults.setValue(form.dateFrom, forKey: "dateFrom")
             }
             else {
-                UIAlertView(title: "Notifications", message: "Please enter and amount and date", delegate: nil, cancelButtonTitle: "OK").show()
+                UIAlertView(title: "Notifications", message: "Please enter an amount and date", delegate: nil, cancelButtonTitle: "OK").show()
                 return
             }
         }

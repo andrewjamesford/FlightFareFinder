@@ -110,7 +110,7 @@ class MyFaresTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-//        super.viewDidAppear(<#T##animated: Bool##Bool#>)
+        // super.viewDidAppear(<#T##animated: Bool##Bool#>)
         loadUserDefaults()
         
         loadFares(orig, destination: dest)

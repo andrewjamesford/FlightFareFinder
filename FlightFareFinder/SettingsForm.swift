@@ -13,7 +13,7 @@ class SettingsForm: NSObject, FXForm {
 
     var origin: String?
     var destination: String?
-    var alertAmount: Int?
+    var alertAmount = 0
     var dateFrom: NSDate?
     var notificationsEnabled = false
     let airports = ["AKL", "TRG", "WLG", "CHC", "ZQN", "HLZ"]
@@ -32,13 +32,11 @@ class SettingsForm: NSObject, FXForm {
             [FXFormFieldKey: "origin",
                 FXFormFieldHeader: "Locations",
                 FXFormFieldTitle: "Origin",
-                FXFormFieldOptions: airports,
-                FXFormFieldCell: FXFormOptionPickerCell.self],
+                FXFormFieldOptions: airports],
             
             [FXFormFieldKey: "destination",
                 FXFormFieldTitle: "Destination",
-                FXFormFieldOptions: airports,
-                FXFormFieldCell: FXFormOptionPickerCell.self],
+                FXFormFieldOptions: airports],
             
             [FXFormFieldKey: "notificationsEnabled",
                 FXFormFieldHeader: "Notifications",
@@ -47,9 +45,9 @@ class SettingsForm: NSObject, FXForm {
             
             [FXFormFieldKey: "alertAmount",
                 FXFormFieldTitle: "Alert Amount",
-                FXFormFieldOptions: ["49", "59", "69", "79", "89", "99", "109"],
-                FXFormFieldCell: FXFormOptionPickerCell.self],
-            
+                FXFormFieldOptions: [49, 59, 69, 79, 89, 99, 109]],
+                
+                
             "dateFrom",
             
             //this field doesn't correspond to any property of the form

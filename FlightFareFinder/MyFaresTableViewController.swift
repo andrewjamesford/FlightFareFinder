@@ -113,6 +113,8 @@ class MyFaresTableViewController: UITableViewController {
         // super.viewDidAppear(<#T##animated: Bool##Bool#>)
         loadUserDefaults()
         
+        locationToggle.selectedSegmentIndex = 0
+        
         loadFares(orig, destination: dest)
     }
 

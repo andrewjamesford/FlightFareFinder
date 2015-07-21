@@ -60,7 +60,6 @@ class SettingsViewController: FXFormViewController {
         {
             notificationsEnabled = (userDefaults.objectForKey("notificationsEnabled") as? Bool)!
         }
-        
     }
 
     func submitSettingsForm(cell: FXFormFieldCellProtocol) {

@@ -32,9 +32,9 @@ class MyFaresTableViewController: UITableViewController {
     
     func loadFares(origin: String, destination: String) {
         print("loadfares")
-        let segmentTitle1: String = origin + " > " + destination
+        let segmentTitle1: String = orig + " ✈️ " + dest
         print(segmentTitle1)
-        let segmentTitle2: String = destination + " > " + origin
+        let segmentTitle2: String = dest + " ✈️ " + orig
         print(segmentTitle2)
         
         locationToggle.setTitle(segmentTitle1, forSegmentAtIndex: 0)

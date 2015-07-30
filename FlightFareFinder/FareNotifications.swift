@@ -18,6 +18,7 @@ class FareNotifications {
     }
     
     func addNotification(body: String, title: String) {
+        
         // create a corresponding local notification
         var notification = UILocalNotification()
         notification.alertBody = body // text that will be displayed in the notification

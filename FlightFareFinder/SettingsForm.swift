@@ -38,7 +38,7 @@ class SettingsForm: NSObject, FXForm {
             
             [FXFormFieldKey: "alertAmount",
                 FXFormFieldTitle: "Alert Amount",
-                FXFormFieldOptions: [49, 59, 69, 79, 89, 99, 109]],
+                FXFormFieldOptions: [50, 60, 70, 80, 90, 100, 110]],
             
             [FXFormFieldKey: "dateFrom",
                 FXFormFieldTitle: "Notify From"],

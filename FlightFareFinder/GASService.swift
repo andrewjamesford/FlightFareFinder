@@ -10,7 +10,7 @@ import Alamofire
 
 struct GASService {
 
-    private static let baseURL = "https://grabaseat.co.nz"
+    private static let baseURL = getConfigProperty("BaseURL")
     
     private enum ResourcePath: CustomStringConvertible {
         case SmokingSpecials
@@ -27,8 +27,7 @@ struct GASService {
             }
         }
     }
-    
-    
+        
     static func getSpecials(response: (JSON) -> ()) {
         
         let urlString = baseURL + ResourcePath.Specials.description

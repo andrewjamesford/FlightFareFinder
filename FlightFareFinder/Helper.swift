@@ -29,3 +29,20 @@ func stringDateToDate(stringDate: String, dateType: Int32) -> String {
         return ""
     }
 }
+
+
+func getConfigProperty(configItem: String) -> String {
+    
+    var myDict: NSDictionary?
+    if let path = NSBundle.mainBundle().pathForResource("Config", ofType: "plist") {
+        myDict = NSDictionary(contentsOfFile: path)
+    }
+    if let dict = myDict {
+        // Use your dict here
+        let stringValue = (dict[configItem] as! String)
+        return stringValue
+    }
+    else {
+        return ""
+    }
+}

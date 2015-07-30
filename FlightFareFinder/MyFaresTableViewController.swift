@@ -15,7 +15,8 @@ class MyFaresTableViewController: UITableViewController {
     var orig: String = "TRG"
     var dest: String = "AKL"
     let userDefaults = NSUserDefaults.standardUserDefaults()
-    let myUrl = "https://flightbookings.grabaseat.co.nz/vbook/actions/ext-search"
+
+    let myUrl = getConfigProperty("BookingURL")
     
     @IBOutlet weak var locationToggle: UISegmentedControl!
         

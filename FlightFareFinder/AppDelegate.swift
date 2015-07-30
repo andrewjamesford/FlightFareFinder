@@ -110,6 +110,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
+        
+        
+        completionHandler(UIBackgroundFetchResult.NewData)
+        
+        //completionHandler(UIBackgroundFetchResult.Failed)
 
     }
 }

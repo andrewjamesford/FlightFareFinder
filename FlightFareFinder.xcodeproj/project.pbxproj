@@ -27,6 +27,7 @@
 		49F5D4AE1B4A7FE300A9F7AA /* Spring in Resources */ = {isa = PBXBuildFile; fileRef = 49F5D4AD1B4A7FE300A9F7AA /* Spring */; };
 		49FECBDC1B679D1B0085ED9F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FECBDB1B679D1B0085ED9F /* Media.xcassets */; };
 		49FECBDE1B6A19A70085ED9F /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49FECBDD1B6A19A70085ED9F /* Config.plist */; };
+		49FECBE01B6A36E70085ED9F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 49FECBDF1B6A36E60085ED9F /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		49F5D4AD1B4A7FE300A9F7AA /* Spring */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Spring; sourceTree = "<group>"; };
 		49FECBDB1B679D1B0085ED9F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		49FECBDD1B6A19A70085ED9F /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		49FECBDF1B6A36E60085ED9F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 		49271FA21B35240B001FD90C = {
 			isa = PBXGroup;
 			children = (
+				49FECBDF1B6A36E60085ED9F /* README.md */,
 				49797E401B55367900250BC8 /* FlightFareFinder-Bridging-Header.h */,
 				49271FAD1B35240B001FD90C /* FlightFareFinder */,
 				49271FC51B35240B001FD90C /* FlightFareFinderTests */,
@@ -417,6 +420,7 @@
 				49797E3E1B5533BD00250BC8 /* FXForms.m in Sources */,
 				495375D81B53BBA600B56C36 /* Punctual.swift in Sources */,
 				49797E361B552C1C00250BC8 /* SettingsForm.swift in Sources */,
+				49FECBE01B6A36E70085ED9F /* README.md in Sources */,
 				49797E421B55371D00250BC8 /* ISO3166CountryValueTransformer.swift in Sources */,
 				4910F1A71B494C78008CE837 /* MyFaresTableViewController.swift in Sources */,
 				49271FB11B35240B001FD90C /* AppDelegate.swift in Sources */,

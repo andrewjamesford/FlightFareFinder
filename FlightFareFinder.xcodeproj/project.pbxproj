@@ -24,6 +24,7 @@
 		49797E361B552C1C00250BC8 /* SettingsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49797E351B552C1C00250BC8 /* SettingsForm.swift */; };
 		49797E3E1B5533BD00250BC8 /* FXForms.m in Sources */ = {isa = PBXBuildFile; fileRef = 49797E3D1B5533BD00250BC8 /* FXForms.m */; };
 		49797E421B55371D00250BC8 /* ISO3166CountryValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49797E411B55371D00250BC8 /* ISO3166CountryValueTransformer.swift */; };
+		499DCC461B6B85B500DE5946 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DCC451B6B85B500DE5946 /* UserSettings.swift */; };
 		49F5D4AE1B4A7FE300A9F7AA /* Spring in Resources */ = {isa = PBXBuildFile; fileRef = 49F5D4AD1B4A7FE300A9F7AA /* Spring */; };
 		49FECBDC1B679D1B0085ED9F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FECBDB1B679D1B0085ED9F /* Media.xcassets */; };
 		49FECBDE1B6A19A70085ED9F /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49FECBDD1B6A19A70085ED9F /* Config.plist */; };
@@ -112,6 +113,7 @@
 		49797E3D1B5533BD00250BC8 /* FXForms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXForms.m; sourceTree = "<group>"; };
 		49797E401B55367900250BC8 /* FlightFareFinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlightFareFinder-Bridging-Header.h"; sourceTree = "<group>"; };
 		49797E411B55371D00250BC8 /* ISO3166CountryValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO3166CountryValueTransformer.swift; sourceTree = "<group>"; };
+		499DCC451B6B85B500DE5946 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		49F5D4AD1B4A7FE300A9F7AA /* Spring */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Spring; sourceTree = "<group>"; };
 		49FECBDB1B679D1B0085ED9F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		49FECBDD1B6A19A70085ED9F /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				495375D71B53BBA600B56C36 /* Punctual.swift */,
 				4910F1AD1B495A1D008CE837 /* Helper.swift */,
 				49527AFF1B5D107E00D31240 /* FareNotifications.swift */,
+				499DCC451B6B85B500DE5946 /* UserSettings.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				490B7AC91B453384004B086C /* SwiftyJSON.swift in Sources */,
 				495375D61B51300700B56C36 /* SettingsViewController.swift in Sources */,
 				490B7AEE1B453DEA004B086C /* GASService.swift in Sources */,
+				499DCC461B6B85B500DE5946 /* UserSettings.swift in Sources */,
 				49527B001B5D107E00D31240 /* FareNotifications.swift in Sources */,
 				4910F1AC1B494D53008CE837 /* MyFaresTableViewCell.swift in Sources */,
 			);

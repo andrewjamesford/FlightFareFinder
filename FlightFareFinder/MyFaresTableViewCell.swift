@@ -20,5 +20,8 @@ class MyFaresTableViewCell: UITableViewCell {
         
         dateLabel.text = stringDateToDate(fareDate, dateType: 1)
         priceLabel.text = "$" + price
+//        if () {
+//            backgroundColor = UIColor.redColor()
+//        }
     }
 }

@@ -24,17 +24,10 @@ class MyFaresTableViewCell: UITableViewCell {
         let settings = loadUserSettings()
         backgroundColor = UIColor.whiteColor()
         
-        if (settings.notificationsEnabled) {
-            print(priceInt)
-            print(settings.alertAmount)
-            if (priceInt < settings.alertAmount) {
-                print(fareDateFormatted)
-                print(settings.dateFrom)
-                print(fareDateFormatted!.timeIntervalSinceDate(settings.dateFrom!))
-                if (fareDateFormatted!.timeIntervalSinceDate(settings.dateFrom!).isSignMinus) {
-                    backgroundColor = UIColor(red:0.29, green:0.86, blue:0.37, alpha:0.5)
-                }
-            }
+        if ((settings.notificationsEnabled) &&
+            (priceInt < settings.alertAmount) &&
+            (settings.dateFrom!.timeIntervalSinceDate(fareDateFormatted!).isSignMinus)) {
+            backgroundColor = UIColor(red:0.96, green:0.16, blue:0.34, alpha:0.2)
         }
         
         dateLabel.text = stringDateToDate(fareDate, dateType: 1)

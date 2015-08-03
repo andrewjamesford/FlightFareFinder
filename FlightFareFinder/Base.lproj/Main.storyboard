@@ -167,4 +167,5 @@
         <image name="cog" width="24" height="24"/>
         <image name="cog-filled" width="24" height="24"/>
     </resources>
+    <color key="tintColor" red="0.92504125833511353" green="0.18908262252807617" blue="0.34166717529296875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

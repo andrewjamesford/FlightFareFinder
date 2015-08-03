@@ -43,7 +43,7 @@ class SettingsForm: NSObject, FXForm {
             [FXFormFieldKey: "dateFrom",
                 FXFormFieldTitle: "Notify From"],
             
-            [FXFormFieldKey: "saveButton", FXFormFieldTitle: "Save", FXFormFieldHeader: "", FXFormFieldAction: "submitSettingsForm:", "backgroundColor": UIColor.blueColor(), "textLabel.color": UIColor.whiteColor() ],
+            [FXFormFieldKey: "saveButton", FXFormFieldTitle: "Save", FXFormFieldHeader: "", FXFormFieldAction: "submitSettingsForm:", "backgroundColor": UIColor(red:0.96, green:0.16, blue:0.34, alpha:1), "textLabel.color": UIColor.whiteColor() ],
             
             
         ]

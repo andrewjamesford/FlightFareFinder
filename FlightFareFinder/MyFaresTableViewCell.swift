@@ -21,7 +21,7 @@ class MyFaresTableViewCell: UITableViewCell {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let fareDateFormatted = dateFormatter.dateFromString(fareDate)
-        let settings = loadUserSettings()
+        let settings = UserService.loadUserSettings()
         backgroundColor = UIColor.whiteColor()
         
         if ((settings.notificationsEnabled) &&

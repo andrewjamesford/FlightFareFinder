@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: FXFormViewController {
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let userDefaults = UserService.loadUserSettings()
     var orig: String?
     var dest: String?
     var alertAmount = 0
@@ -27,39 +27,13 @@ class SettingsViewController: FXFormViewController {
     
     func reloadForm() {
         
-        loadUserDefaults()
-        
         let form = formController.form as! SettingsForm
-        form.origin = orig
-        form.destination = dest
-        form.dateFrom = dateFrom
-        form.alertAmount = alertAmount
-        form.notificationsEnabled = notificationsEnabled
+        form.origin = userDefaults.origin
+        form.destination = userDefaults.destination
+        form.dateFrom = userDefaults.dateFrom
+        form.alertAmount = userDefaults.alertAmount
+        form.notificationsEnabled = userDefaults.notificationsEnabled
         
-    }
-    
-    func loadUserDefaults()
-    {
-        if ((userDefaults.objectForKey("orig") as? String) != nil)
-        {
-            orig = (userDefaults.objectForKey("orig") as? String)!
-        }
-        if ((userDefaults.objectForKey("dest") as? String) != nil)
-        {
-            dest = (userDefaults.objectForKey("dest") as? String)!
-        }
-        if ((userDefaults.objectForKey("alertAmount") as? NSInteger) != nil)
-        {
-            alertAmount = (userDefaults.objectForKey("alertAmount") as? NSInteger)!
-        }
-        if ((userDefaults.objectForKey("dateFrom") as? NSDate) != nil)
-        {
-            dateFrom = (userDefaults.objectForKey("dateFrom") as? NSDate)!
-        }
-        if ((userDefaults.objectForKey("notificationsEnabled") as? Bool) != nil)
-        {
-            notificationsEnabled = (userDefaults.objectForKey("notificationsEnabled") as? Bool)!
-        }
     }
 
     func submitSettingsForm(cell: FXFormFieldCellProtocol) {
@@ -85,27 +59,21 @@ class SettingsViewController: FXFormViewController {
             if (form.dateFrom == "") { formNotificationValid = false }
         }
 
-        if (formLocationValid)
+        if (!formLocationValid)
         {
-            userDefaults.setValue(orig, forKey: "orig")
-            userDefaults.setValue(dest, forKey: "dest")
-        }
-        else {
             UIAlertView(title: "Locations", message: "Please select all locations", delegate: nil, cancelButtonTitle: "OK").show()
             return
         }
         
         if (form.notificationsEnabled) {
-            if (formNotificationValid) {
-                userDefaults.setValue(form.notificationsEnabled, forKey: "notificationsEnabled")
-                userDefaults.setValue(form.alertAmount, forKey: "alertAmount")
-                userDefaults.setValue(form.dateFrom, forKey: "dateFrom")
-            }
-            else {
+            if (!formNotificationValid)
+            {
                 UIAlertView(title: "Notifications", message: "Please enter an amount and date", delegate: nil, cancelButtonTitle: "OK").show()
                 return
             }
         }
+        
+        UserService.setUserSettings(form.origin, destination: form.destination, alertAmount: form.alertAmount, dateFrom: form.dateFrom, notificationsEnabled: form.notificationsEnabled)
         
         UIAlertView(title: "Settings", message: "Saved", delegate: nil, cancelButtonTitle: "OK").show()
         return

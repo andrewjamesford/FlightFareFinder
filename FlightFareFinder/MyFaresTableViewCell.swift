@@ -17,17 +17,25 @@ class MyFaresTableViewCell: UITableViewCell {
     func configureWithMyFare(fare: JSON) {
         let price: String = fare["@farePrice"].string ?? ""
         let priceInt: Int? = Int(price)
+        
         let fareDate = fare["@outboundDate"].string ?? ""
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let fareDateFormatted = dateFormatter.dateFromString(fareDate)
+        
         let settings = UserService.loadUserSettings()
+        
         backgroundColor = UIColor.whiteColor()
+        dateLabel.textColor = UIColor.darkTextColor()
+        priceLabel.textColor = UIColor.darkTextColor()
         
         if ((settings.notificationsEnabled) &&
             (priceInt < settings.alertAmount) &&
             (settings.dateFrom!.timeIntervalSinceDate(fareDateFormatted!).isSignMinus)) {
-            backgroundColor = UIColor(red:0.96, green:0.16, blue:0.34, alpha:0.2)
+                backgroundColor = getAppColor()
+                dateLabel.textColor = UIColor.lightTextColor()
+                priceLabel.textColor = UIColor.lightTextColor()
+
         }
         
         dateLabel.text = stringDateToDate(fareDate, dateType: 1)

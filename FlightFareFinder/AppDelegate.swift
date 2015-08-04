@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
@@ -25,8 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UIScrollView.appearance().backgroundColor = UIColor.groupTableViewBackgroundColor()
         
+        UITabBar.appearance().tintColor = getAppColor()
+        UINavigationBar.appearance().tintColor = getAppColor()
+        UISegmentedControl.appearance().tintColor = getAppColor()
+        UITableView.appearance().tintColor = getAppColor()
+        UISwitch.appearance().onTintColor = getAppColor()
+        
+        
         return true
     }
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -53,69 +60,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         
         var fares: JSON! = []
-        var orig: String = "TRG"
-        var dest: String = "AKL"
-        var alertAmount = 0
-        var dateFrom: NSDate?
-        var notificationsEnabled = false
-        
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        
-        if ((userDefaults.objectForKey("orig") as? String) != nil)
-        {
-            orig = (userDefaults.objectForKey("orig") as? String)!
-            print(orig)
-        }
-        if ((userDefaults.objectForKey("dest") as? String) != nil)
-        {
-            dest = (userDefaults.objectForKey("dest") as? String)!
-            print(dest)
-        }
-        if ((userDefaults.objectForKey("alertAmount") as? NSInteger) != nil)
-        {
-            alertAmount = (userDefaults.objectForKey("alertAmount") as? NSInteger)!
-            print(alertAmount)
-        }
-        if ((userDefaults.objectForKey("notificationsEnabled") as? Bool) != nil)
-        {
-            notificationsEnabled = (userDefaults.objectForKey("notificationsEnabled") as? Bool)!
-        }
-        if ((userDefaults.objectForKey("dateFrom") as? NSDate) != nil)
-        {
-            dateFrom = (userDefaults.objectForKey("dateFrom") as? NSDate)!
-        }
-        
-        let dateNow = NSDate()
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        if (notificationsEnabled) {
-            // Do call to get fares
-            GASService.getPrices(orig, destination: dest) { (JSON) -> () in
-                fares = JSON["PriceAvailability"]
-                if (fares != nil) {
-                    for (key, subJson) in JSON["PriceAvailability"] {
-                        if let farePrice = subJson["@farePrice"].int {
-                            let sFarePrice = subJson["@outboundDate"].string
-                            let fareDate = dateFormatter.dateFromString(sFarePrice!)
-                            
-                            // Check matches NSUserDefaults settings
-                            if ((farePrice < alertAmount) && (fareDate!.timeIntervalSinceDate(dateFrom!).isSignMinus)) {
-                                
-                                // Call FareNotifications.addNotification                            
-                                FareNotifications.sharedInstance.addNotification("body", title: "my title")
-                            }
-                        }
+        let userDefaults = UserService.loadUserSettings()
+  
+        // Do call to get fares
+        GASService.getPrices(userDefaults.origin!, destination: userDefaults.destination!) { (JSON) -> () in
+            fares = JSON["PriceAvailability"]
+            
+            if (fares != nil) {
+                for (_, subJson) in JSON["PriceAvailability"] {
+                    let price: String = subJson["@farePrice"].string ?? ""
+                    let priceInt: Int? = Int(price)
+                    
+                    let fareDate = subJson["@outboundDate"].string ?? ""
+                    let dateFormatter = NSDateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    let fareDateFormatted = dateFormatter.dateFromString(fareDate)
+
+                    if ((userDefaults.notificationsEnabled) &&
+                        (priceInt < userDefaults.alertAmount) &&
+                        (userDefaults.dateFrom!.timeIntervalSinceDate(fareDateFormatted!).isSignMinus)) {
+                            print("addNotification")
+                            // Call FareNotifications.addNotification
+                            FareNotifications.sharedInstance.addNotification("body", title: "Flight for " + fareDate)
                     }
+
                 }
             }
+
         }
         
-        
         completionHandler(UIBackgroundFetchResult.NewData)
-        
-        //completionHandler(UIBackgroundFetchResult.Failed)
-
+    
     }
 }
 

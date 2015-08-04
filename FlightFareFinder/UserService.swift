@@ -25,9 +25,15 @@ struct UserService {
         {
             orig = (userDefaults.objectForKey("orig") as? String)!
         }
+        else {
+            orig = "TRG"
+        }
         if ((userDefaults.objectForKey("dest") as? String) != nil)
         {
             dest = (userDefaults.objectForKey("dest") as? String)!
+        }
+        else {
+            dest = "AKL"
         }
         if ((userDefaults.objectForKey("alertAmount") as? NSInteger) != nil)
         {

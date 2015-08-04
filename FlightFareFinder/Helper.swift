@@ -30,6 +30,10 @@ func stringDateToDate(stringDate: String, dateType: Int32) -> String {
     }
 }
 
+func getAppColor() -> UIColor {
+    return UIColor(red:0.18, green:0.59, blue:0.53, alpha:1)
+}
+
 
 func getConfigProperty(configItem: String) -> String {
     

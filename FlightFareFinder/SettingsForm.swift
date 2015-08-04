@@ -17,6 +17,7 @@ class SettingsForm: NSObject, FXForm {
     var dateFrom: NSDate?
     var notificationsEnabled = false
     let airports = ["AKL", "TRG", "WLG", "CHC", "ZQN", "HLZ"]
+    let btnColor = getAppColor()
         
     func fields() -> [AnyObject]! {
         
@@ -43,7 +44,7 @@ class SettingsForm: NSObject, FXForm {
             [FXFormFieldKey: "dateFrom",
                 FXFormFieldTitle: "Notify From"],
             
-            [FXFormFieldKey: "saveButton", FXFormFieldTitle: "Save", FXFormFieldHeader: "", FXFormFieldAction: "submitSettingsForm:", "backgroundColor": UIColor(red:0.96, green:0.16, blue:0.34, alpha:1), "textLabel.color": UIColor.whiteColor() ],
+            [FXFormFieldKey: "saveButton", FXFormFieldTitle: "Save", FXFormFieldHeader: "", FXFormFieldAction: "submitSettingsForm:", "backgroundColor": getAppColor(), "textLabel.color": UIColor.whiteColor() ],
             
             
         ]

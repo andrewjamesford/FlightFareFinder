@@ -25,6 +25,7 @@
 		49797E3E1B5533BD00250BC8 /* FXForms.m in Sources */ = {isa = PBXBuildFile; fileRef = 49797E3D1B5533BD00250BC8 /* FXForms.m */; };
 		49797E421B55371D00250BC8 /* ISO3166CountryValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49797E411B55371D00250BC8 /* ISO3166CountryValueTransformer.swift */; };
 		499DCC461B6B85B500DE5946 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DCC451B6B85B500DE5946 /* UserService.swift */; };
+		49B32F201B723D060054B572 /* ExampleConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49B32F1F1B723D060054B572 /* ExampleConfig.plist */; };
 		49F5D4AE1B4A7FE300A9F7AA /* Spring in Resources */ = {isa = PBXBuildFile; fileRef = 49F5D4AD1B4A7FE300A9F7AA /* Spring */; };
 		49FECBDC1B679D1B0085ED9F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FECBDB1B679D1B0085ED9F /* Media.xcassets */; };
 		49FECBDE1B6A19A70085ED9F /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49FECBDD1B6A19A70085ED9F /* Config.plist */; };
@@ -114,6 +115,7 @@
 		49797E401B55367900250BC8 /* FlightFareFinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlightFareFinder-Bridging-Header.h"; sourceTree = "<group>"; };
 		49797E411B55371D00250BC8 /* ISO3166CountryValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO3166CountryValueTransformer.swift; sourceTree = "<group>"; };
 		499DCC451B6B85B500DE5946 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		49B32F1F1B723D060054B572 /* ExampleConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExampleConfig.plist; sourceTree = "<group>"; };
 		49F5D4AD1B4A7FE300A9F7AA /* Spring */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Spring; sourceTree = "<group>"; };
 		49FECBDB1B679D1B0085ED9F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		49FECBDD1B6A19A70085ED9F /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		49271FAE1B35240B001FD90C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				49B32F1F1B723D060054B572 /* ExampleConfig.plist */,
 				49271FAF1B35240B001FD90C /* Info.plist */,
 				49FECBDD1B6A19A70085ED9F /* Config.plist */,
 			);
@@ -402,6 +405,7 @@
 				49FECBDC1B679D1B0085ED9F /* Media.xcassets in Resources */,
 				49FECBDE1B6A19A70085ED9F /* Config.plist in Resources */,
 				49271FBD1B35240B001FD90C /* LaunchScreen.xib in Resources */,
+				49B32F201B723D060054B572 /* ExampleConfig.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

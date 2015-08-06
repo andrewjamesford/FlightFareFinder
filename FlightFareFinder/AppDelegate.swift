@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -56,45 +57,64 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        print("didReceiveLocalNotification")
+        FareNotifications.sharedInstance.setBadgeNumbers(0)
+    }
 
     func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         
         var fares: JSON! = []
-        let userDefaults = UserService.loadUserSettings()
+        let userSettings = UserService.loadUserSettings()
         var bNotificationSent = false
-  
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        print("performFetch")
+        
         // Do call to get fares
-        GASService.getPrices(userDefaults.origin!, destination: userDefaults.destination!) { (JSON) -> () in
-            fares = JSON["PriceAvailability"]
+        GASService.getPrices(userSettings.origin!, destination: userSettings.destination!) { (JSON) -> () in fares = JSON["PriceAvailability"]
             
             if (fares != nil) {
-                for (_, subJson) in JSON["PriceAvailability"] {
-                    let price: String = subJson["@farePrice"].string ?? ""
-                    let priceInt: Int? = Int(price)
+                let prevJson = userDefaults.objectForKey("prevJson") as? String
+                
+                if (prevJson != fares.stringValue) {
                     
-                    let fareDate = subJson["@outboundDate"].string ?? ""
-                    let dateFormatter = NSDateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-                    let fareDateFormatted = dateFormatter.dateFromString(fareDate)
+                    print("No match")
+                    for (_, subJson) in JSON["PriceAvailability"] {
+                        let price: String = subJson["@farePrice"].string ?? ""
+                        let priceInt: Int? = Int(price)
+                        let fareDate = subJson["@outboundDate"].string ?? ""
+                        let dateFormatter = NSDateFormatter()
+                        dateFormatter.dateFormat = "yyyy-MM-dd"
+                        let fareDateFormatted = dateFormatter.dateFromString(fareDate)
+                        
+                        if ((userSettings.notificationsEnabled) &&
+                            (priceInt < userSettings.alertAmount) &&
+                            (userSettings.dateFrom!.timeIntervalSinceDate(fareDateFormatted!).isSignMinus)) {
 
-                    if ((userDefaults.notificationsEnabled) &&
-                        (priceInt < userDefaults.alertAmount) &&
-                        (userDefaults.dateFrom!.timeIntervalSinceDate(fareDateFormatted!).isSignMinus)) {
                             if (!bNotificationSent) {
-                                print("addNotification")
+                                
+                                print("add Notification")
+                                print(price)
                                 // Call FareNotifications.addNotification
-                                FareNotifications.sharedInstance.addNotification("Flight fares availble under $" + price, title: "Flight for " + fareDate)
+                                FareNotifications.sharedInstance.addNotification("Flight fares availble for $" + price, title: "Flight for " + fareDate)
                                 bNotificationSent = true
+                                
                             }
+                        }
                     }
-
+                    
+                    if (bNotificationSent) {
+                        print("set prev JSON")
+                        userDefaults.setValue(fares.stringValue, forKey: "prevJson")
+                    }
                 }
+                
             }
-
         }
         
         completionHandler(UIBackgroundFetchResult.NewData)
-    
     }
 }
 

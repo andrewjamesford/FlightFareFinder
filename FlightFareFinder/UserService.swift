@@ -70,5 +70,8 @@ struct UserService {
         if (notificationsEnabled != nil) {
             userDefaults.setValue(notificationsEnabled, forKey: "notificationsEnabled")
         }
+        // Reset prevJson
+        userDefaults.setValue("", forKey: "prevJson")
     }
+    
 }

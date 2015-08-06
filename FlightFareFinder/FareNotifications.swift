@@ -20,7 +20,7 @@ class FareNotifications {
     func addNotification(body: String, title: String) {
         
         // create a corresponding local notification
-        var notification = UILocalNotification()
+        let notification = UILocalNotification()
         notification.alertBody = body // text that will be displayed in the notification
         notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
         notification.fireDate = NSDate() // todo item due date (when notification will be fired)
@@ -29,23 +29,19 @@ class FareNotifications {
         notification.category = "FARE_NOTIFY"
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
-        
-        self.setBadgeNumbers()
+
+        self.setBadgeNumbers(1)
     }
     
-    func setBadgeNumbers() {
-        var notifications = UIApplication.sharedApplication().scheduledLocalNotifications as [UILocalNotification]! // all scheduled notifications
+    func setBadgeNumbers(badgeNumber: Int) {
+        //var notifications = UIApplication.sharedApplication().scheduledLocalNotifications as [UILocalNotification]! // all scheduled notifications
+        print("Set badge number")
+        let notification = UILocalNotification()
         
-        //var todoItems: [TodoItem] = self.allItems()
-        
-//        for notification in notifications {
-//            var overdueItems = todoItems.filter({ (todoItem) -> Bool in // array of to-do items...
-//                return (todoItem.deadline.compare(notification.fireDate!) != .OrderedDescending) // ...where item deadline is before or on notification fire date
-//            })
-//            
-//            UIApplication.sharedApplication().cancelLocalNotification(notification) // cancel old notification
-//            notification.applicationIconBadgeNumber = overdueItems.count // set new badge number
-//            UIApplication.sharedApplication().scheduleLocalNotification(notification) // reschedule notification
-//        }
+        UIApplication.sharedApplication().cancelLocalNotification(notification) // cancel old notification
+        notification.applicationIconBadgeNumber = badgeNumber // set new badge number
+        UIApplication.sharedApplication().scheduleLocalNotification(notification) // reschedule notification
+
     }
+    
 }

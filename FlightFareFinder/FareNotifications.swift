@@ -27,20 +27,9 @@ class FareNotifications {
         notification.soundName = UILocalNotificationDefaultSoundName // play default sound
         notification.userInfo = ["title": title] // assign a unique identifier to the notification so that we can retrieve it later
         notification.category = "FARE_NOTIFY"
+        notification.applicationIconBadgeNumber = 1
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
-
-        self.setBadgeNumbers(1)
-    }
-    
-    func setBadgeNumbers(badgeNumber: Int) {
-        //var notifications = UIApplication.sharedApplication().scheduledLocalNotifications as [UILocalNotification]! // all scheduled notifications
-        print("Set badge number")
-        let notification = UILocalNotification()
-        
-        UIApplication.sharedApplication().cancelLocalNotification(notification) // cancel old notification
-        notification.applicationIconBadgeNumber = badgeNumber // set new badge number
-        UIApplication.sharedApplication().scheduleLocalNotification(notification) // reschedule notification
 
     }
     

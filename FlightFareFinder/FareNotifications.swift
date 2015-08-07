@@ -21,6 +21,9 @@ class FareNotifications {
         
         // create a corresponding local notification
         let notification = UILocalNotification()
+        
+        UIApplication.sharedApplication().cancelLocalNotification(notification)
+        
         notification.alertBody = body // text that will be displayed in the notification
         notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
         notification.fireDate = NSDate() // todo item due date (when notification will be fired)
@@ -31,6 +34,16 @@ class FareNotifications {
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
 
+        self.setBadgeNumbers(1)
+        
+    }
+    
+    func setBadgeNumbers(badgeNumber: Int) {
+        
+        //var notifications = UIApplication.sharedApplication().scheduledLocalNotifications as [UILocalNotification]! // all scheduled notifications
+        print("Set badge number")
+        
+        UIApplication.sharedApplication().applicationIconBadgeNumber = badgeNumber
     }
     
 }

@@ -107,6 +107,9 @@ class MyFaresTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        print("View appeared")
+        FareNotifications.sharedInstance.setBadgeNumbers(0)
 
         // super.viewDidAppear(<#T##animated: Bool##Bool#>)
         loadUserDefaults()

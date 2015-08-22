@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FXForms
 
 class SettingsViewController: FXFormViewController {
     

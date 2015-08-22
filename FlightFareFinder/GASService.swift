@@ -12,7 +12,7 @@ struct GASService {
 
     private static let baseURL = getConfigProperty("BaseURL")
     
-    private enum ResourcePath: CustomStringConvertible {
+    enum ResourcePath: CustomStringConvertible {
         case SmokingSpecials
         case LowList
         case Specials
@@ -25,29 +25,6 @@ struct GASService {
             case .LowList: return "/getLowList.json"
             case .Specials: return "/getSpecials.json"
             }
-        }
-    }
-        
-    static func getSpecials(response: (JSON) -> ()) {
-        
-        let urlString = baseURL + ResourcePath.Specials.description
-
-        Alamofire.request(.GET, URLString: urlString).responseJSON { (_, _, data, _) in
-            let specials = JSON(data ?? [])
-           
-            response(specials)
-        }
-        
-    }
-    
-    static func getPrices(origin: String, destination: String, response: (JSON) -> ()) {
-        
-        let urlString = baseURL + ResourcePath.Prices(origin: origin, destination: destination).description
-        print("urlstring=" + urlString)
-        
-        Alamofire.request(.GET, URLString: urlString).responseJSON { (_, _, data, _) in
-            let prices = JSON(data ?? [])
-            response(prices)
         }
     }
 }

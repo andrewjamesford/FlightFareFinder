@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import SwiftyJSON
 
 func stringDateToDate(stringDate: String, dateType: Int32) -> String {
     

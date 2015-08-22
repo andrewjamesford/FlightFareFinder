@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FXForms
 
 class SettingsForm: NSObject, FXForm {
 

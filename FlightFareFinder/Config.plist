@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>BaseURL</key>
-	<string></string>
+	<string>https://grabaseat.co.nz</string>
 	<key>BookingURL</key>
-	<string></string>
+	<string>https://flightbookings.grabaseat.co.nz/vbook/actions/ext-search</string>
 </dict>
 </plist>

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class MyFaresTableViewController: UITableViewController {
 
@@ -31,7 +33,7 @@ class MyFaresTableViewController: UITableViewController {
         }
     }
     
-    func loadFares(origin: String, destination: String) {
+    internal func loadFares(origin: String, destination: String) {
         print("loadfares")
         let segmentTitle1: String = orig + " ✈️ " + dest
         print(segmentTitle1)
@@ -41,28 +43,48 @@ class MyFaresTableViewController: UITableViewController {
         locationToggle.setTitle(segmentTitle1, forSegmentAtIndex: 0)
         locationToggle.setTitle(segmentTitle2, forSegmentAtIndex: 1)
         
-        GASService.getPrices(origin, destination: destination) { (JSON) -> () in
-            self.fares = JSON["PriceAvailability"]
-            self.tableView.reloadData()
-            self.refreshControl?.endRefreshing()
+        let baseURL = getConfigProperty("BaseURL")
+        let urlString = baseURL + GASService.ResourcePath.Prices(origin: origin, destination: destination).description
+        print("urlstring=" + urlString)
+        
+        Alamofire.request(.GET, urlString)
+            .responseJSON { request, response, result in
+                print(result)
+                debugPrint(result)
+    
+                switch result {
+                    case .Success(let data):
+                        let json = JSON(data)
+                        self.fares = json["PriceAvailability"]
+                        self.tableView.reloadData()
+                        self.refreshControl?.endRefreshing()
+                    
+                    case .Failure(_, let error):
+                        print("Request failed with error: \(error)")
+                }
         }
     }
     
     func openURL(url: String, date: NSDate) {
         
-        let nextDay: NSDate = (date + 1.day)!
+        let today = NSDate()
+        let nextDay = NSCalendar.currentCalendar().dateByAddingUnit(
+            .Day,
+            value: 1,
+            toDate: today,
+            options: NSCalendarOptions(rawValue: 0))
         
         let dateFormatterMonth = NSDateFormatter()
         dateFormatterMonth.dateFormat = "MMM"
         let urlMonthString: String = dateFormatterMonth.stringFromDate(date)
-        let urlMonthStringNext: String = dateFormatterMonth.stringFromDate(nextDay)
+        let urlMonthStringNext: String = dateFormatterMonth.stringFromDate(nextDay!)
         print(urlMonthString)
         print(urlMonthStringNext)
         
         let dateFormatterDay = NSDateFormatter()
         dateFormatterDay.dateFormat = "dd"
         let urlDayString: String = dateFormatterDay.stringFromDate(date)
-        let urlDayStringNext: String = dateFormatterDay.stringFromDate(nextDay)
+        let urlDayStringNext: String = dateFormatterDay.stringFromDate(nextDay!)
         print(urlDayString)
         print(urlDayStringNext)
         

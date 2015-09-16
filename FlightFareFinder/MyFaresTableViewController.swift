@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SafariServices
 
 class MyFaresTableViewController: UITableViewController {
 
@@ -92,7 +93,21 @@ class MyFaresTableViewController: UITableViewController {
         let combinedUrl = url + "?" + params
         let targetURL = NSURL(string: combinedUrl)
         
-        UIApplication.sharedApplication().openURL(targetURL!)
+        
+        if #available(iOS 9.0, *) {
+            // Safari view controller
+            let vc = SFSafariViewController(
+                URL: targetURL!,
+                entersReaderIfAvailable: false
+            )
+            presentViewController(vc, animated: true, completion: nil)
+            
+        } else {
+            // Fallback on earlier versions
+            UIApplication.sharedApplication().openURL(targetURL!)
+        }
+        
+        
 
     }
     

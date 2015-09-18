@@ -46,7 +46,12 @@ class SettingsForm: NSObject, FXForm {
             
             [FXFormFieldKey: "saveButton", FXFormFieldTitle: "Save", FXFormFieldHeader: "", FXFormFieldAction: "submitSettingsForm:", "backgroundColor": getAppColor(), "textLabel.color": UIColor.whiteColor() ],
             
+            [FXFormFieldHeader: "Contact",
+                FXFormFieldTitle: "@andrewjamesford",
+                FXFormFieldAction: "showTwitter:"],
             
+            [FXFormFieldTitle: "www.andrewford.co.nz",
+                FXFormFieldAction: "showWebsite:"]
         ]
     }
     

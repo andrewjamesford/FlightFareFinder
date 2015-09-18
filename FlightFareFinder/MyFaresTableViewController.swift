@@ -100,6 +100,7 @@ class MyFaresTableViewController: UITableViewController {
                 URL: targetURL!,
                 entersReaderIfAvailable: false
             )
+            vc.view.tintColor = getAppColor()
             presentViewController(vc, animated: true, completion: nil)
             
         } else {

@@ -36,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UISwitch.appearance().onTintColor = getAppColor()
         UIRefreshControl.appearance().tintColor = getAppColor()
         
+        
         Fabric.with([Crashlytics()])
 
         

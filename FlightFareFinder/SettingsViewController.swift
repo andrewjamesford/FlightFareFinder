@@ -8,6 +8,7 @@
 
 import UIKit
 import FXForms
+import SafariServices
 
 class SettingsViewController: FXFormViewController {
     
@@ -81,5 +82,29 @@ class SettingsViewController: FXFormViewController {
 
     }
 
-
+    func showWebsite(cell: FXFormFieldCellProtocol) {
+        loadUrl("http://www.andrewford.co.nz")
+    }
+    
+    func showTwitter(cell: FXFormFieldCellProtocol) {
+        loadUrl("https://twitter.com/AndrewJamesFord")
+    }
+    
+    func loadUrl(url: String) {
+        let targetURL = NSURL(string: url)
+        
+        if #available(iOS 9.0, *) {
+            // Safari view controller
+            let vc = SFSafariViewController(
+                URL: targetURL!,
+                entersReaderIfAvailable: false
+            )
+            vc.view.tintColor = getAppColor()
+            presentViewController(vc, animated: true, completion: nil)
+            
+        } else {
+            // Fallback on earlier versions
+            UIApplication.sharedApplication().openURL(targetURL!)
+        }
+    }
 }

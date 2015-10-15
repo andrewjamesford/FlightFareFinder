@@ -67,19 +67,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        
-        var fares: JSON! = []
+
         let userSettings = UserService.loadUserSettings()
-        var bNotificationSent = false
-        let userDefaults = NSUserDefaults.standardUserDefaults()
         
         print("performFetch")
 
         let baseURL = getConfigProperty("BaseURL")
         let urlString = baseURL + GASService.ResourcePath.Prices(origin: userSettings.origin!, destination: userSettings.destination!).description
         print("urlstring=" + urlString)
+        let urlString2 = baseURL + GASService.ResourcePath.Prices(origin: userSettings.destination!, destination: userSettings.origin!).description
+        print("urlstring2=" + urlString2)
         
         // Do call to get fares
+        checkForNotifications(urlString)
+        checkForNotifications(urlString2)
+        
+        completionHandler(UIBackgroundFetchResult.NewData)
+    }
+    
+    func checkForNotifications(urlString: String) {
+        var bNotificationSent = false
+        var fares: JSON! = []
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userSettings = UserService.loadUserSettings()
+        
         Alamofire.request(.GET, urlString)
             .responseJSON { request, response, result in
                 print(result)
@@ -102,20 +113,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 let dateFormatter = NSDateFormatter()
                                 dateFormatter.dateFormat = "yyyy-MM-dd"
                                 let fareDateFormatted = dateFormatter.dateFromString(fareDate)
-        
+                                
                                 if ((userSettings.notificationsEnabled) &&
                                     (priceInt < userSettings.alertAmount) &&
                                     (userSettings.dateFrom!.timeIntervalSinceDate(fareDateFormatted!).isSignMinus)) {
-        
-                                    if (!bNotificationSent) {
-        
-                                        print("add Notification")
-                                        print(price)
-                                        // Call FareNotifications.addNotification
-                                        FareNotifications.sharedInstance.addNotification("Flight fares availble for $" + price, title: "Flight for " + fareDate)
-                                        bNotificationSent = true
                                         
-                                    }
+                                        if (!bNotificationSent) {
+                                            
+                                            print("add Notification")
+                                            print(price)
+                                            // Call FareNotifications.addNotification
+                                            FareNotifications.sharedInstance.addNotification("Flight fares availble for $" + price, title: "Flight for " + fareDate)
+                                            bNotificationSent = true
+                                            
+                                        }
                                 }
                             }
                             
@@ -123,57 +134,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 print("set prev JSON")
                                 userDefaults.setValue(fares.stringValue, forKey: "prevJson")
                             }
+                            
                         }
                     }
                     
                 case .Failure(_, let error):
                     print("Request failed with error: \(error)")
+                    
                 }
         }
-        
-        
-//        GASService.getPrices(userSettings.origin!, destination: userSettings.destination!) { (JSON) -> () in fares = JSON["PriceAvailability"]
-//            
-//            if (fares != nil) {
-//                let prevJson = userDefaults.objectForKey("prevJson") as? String
-//                
-//                if (prevJson != fares.stringValue) {
-//                    
-//                    print("No match")
-//                    for (_, subJson) in JSON["PriceAvailability"] {
-//                        let price: String = subJson["@farePrice"].string ?? ""
-//                        let priceInt: Int? = Int(price)
-//                        let fareDate = subJson["@outboundDate"].string ?? ""
-//                        let dateFormatter = NSDateFormatter()
-//                        dateFormatter.dateFormat = "yyyy-MM-dd"
-//                        let fareDateFormatted = dateFormatter.dateFromString(fareDate)
-//                        
-//                        if ((userSettings.notificationsEnabled) &&
-//                            (priceInt < userSettings.alertAmount) &&
-//                            (userSettings.dateFrom!.timeIntervalSinceDate(fareDateFormatted!).isSignMinus)) {
-//
-//                            if (!bNotificationSent) {
-//                                
-//                                print("add Notification")
-//                                print(price)
-//                                // Call FareNotifications.addNotification
-//                                FareNotifications.sharedInstance.addNotification("Flight fares availble for $" + price, title: "Flight for " + fareDate)
-//                                bNotificationSent = true
-//                                
-//                            }
-//                        }
-//                    }
-//                    
-//                    if (bNotificationSent) {
-//                        print("set prev JSON")
-//                        userDefaults.setValue(fares.stringValue, forKey: "prevJson")
-//                    }
-//                }
-//                
-//            }
-//        }
-        
-        completionHandler(UIBackgroundFetchResult.NewData)
     }
 }
 

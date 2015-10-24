@@ -13,13 +13,9 @@ A work in progress of my first Swift project.
 
 ![Settings](https://raw.githubusercontent.com/andrewjamesford/FlightFareFinder/master/screenshot-settings.png)
 
-The following libraries (CocoaPods) were used to create this project:
-
-[FXForms](https://github.com/nicklockwood/FXForms)
-
-[Alamofire](https://github.com/Alamofire/Alamofire)
-
-[SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
-
-[Crashlytics](http://get.fabric.io/)
+## The following libraries (CocoaPods) were used to create this project:
+* [FXForms](https://github.com/nicklockwood/FXForms)
+* [Alamofire](https://github.com/Alamofire/Alamofire)
+* [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
+* [Crashlytics](http://get.fabric.io/)
 

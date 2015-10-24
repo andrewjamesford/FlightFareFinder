@@ -3,7 +3,7 @@ A flight fare finder for a local airline in New Zealand.
 
 A work in progress of my first Swift project.
 
-To do:
+## To do:
 * Remove save button in settings, save on change
 * Add credits page
 * Add privacy & terms page

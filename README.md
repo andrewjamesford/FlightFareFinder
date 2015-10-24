@@ -3,6 +3,11 @@ A flight fare finder for a local airline in New Zealand.
 
 A work in progress of my first Swift project.
 
+To do:
+* Remove save button in settings, save on change
+* Add credits page
+* Add privacy & terms page
+* Improve contrast of highlighted table cells
 
 ![Fares](https://raw.githubusercontent.com/andrewjamesford/FlightFareFinder/master/screenshot-fares.png)
 

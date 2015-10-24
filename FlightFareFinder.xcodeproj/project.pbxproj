@@ -24,7 +24,7 @@
 		49FECBDC1B679D1B0085ED9F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FECBDB1B679D1B0085ED9F /* Media.xcassets */; };
 		49FECBDE1B6A19A70085ED9F /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49FECBDD1B6A19A70085ED9F /* Config.plist */; };
 		49FECBE01B6A36E70085ED9F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 49FECBDF1B6A36E60085ED9F /* README.md */; };
-		5AB99CA6B417886E11BCA896 /* Pods_FlightFareFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3180E1BDB2CD9DEB1F832883 /* Pods_FlightFareFinder.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		5AB99CA6B417886E11BCA896 /* Pods_FlightFareFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3180E1BDB2CD9DEB1F832883 /* Pods_FlightFareFinder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */

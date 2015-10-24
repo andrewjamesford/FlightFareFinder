@@ -15,6 +15,7 @@ class MyFaresTableViewController: UITableViewController {
 
     var fares: JSON! = []
     var faresReturn: JSON! = []
+
     var orig: String = "TRG"
     var dest: String = "AKL"
     let userDefaults = NSUserDefaults.standardUserDefaults()
@@ -49,19 +50,16 @@ class MyFaresTableViewController: UITableViewController {
         print("urlstring=" + urlString)
         
         Alamofire.request(.GET, urlString)
-            .responseJSON { request, response, result in
-                print(result)
-                debugPrint(result)
-    
-                switch result {
-                    case .Success(let data):
-                        let json = JSON(data)
-                        self.fares = json["PriceAvailability"]
-                        self.tableView.reloadData()
-                        self.refreshControl?.endRefreshing()
+            .responseJSON { response in
+                debugPrint(response)
+                
+                if let json = response.result.value {
+                    let jsonTyped = JSON(json)
                     
-                    case .Failure(_, let error):
-                        print("Request failed with error: \(error)")
+                    self.fares = jsonTyped["PriceAvailability"]
+                    self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
+                    
                 }
         }
     }
@@ -141,6 +139,9 @@ class MyFaresTableViewController: UITableViewController {
         //loadFares(orig, destination: dest)
         
         refreshControl?.addTarget(self, action: "refreshFares", forControlEvents: UIControlEvents.ValueChanged)
+        
+        // Hides empty table cells
+        self.tableView.tableFooterView = UIView.init()
 
     }
     

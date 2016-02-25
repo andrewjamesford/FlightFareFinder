@@ -1,0 +1,36 @@
+PODS:
+  - Alamofire (3.1.0)
+  - Crashlytics (3.3.4)
+  - Fabric (1.5.5):
+    - Fabric/Base (= 1.5.5)
+  - Fabric/Base (1.5.5)
+  - FXForms (1.2.13)
+  - SwiftDate (1.2)
+  - SwiftyJSON (2.3.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.1)
+  - Crashlytics
+  - Fabric
+  - FXForms (~> 1.2)
+  - SwiftDate
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 83dc3138b14571200ea7f070933a2a510491e997
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  Alamofire: 415bd7f56197722978759078486689f7ef913dce
+  Crashlytics: 41c082440d2e14da444186fff65e79c0b4b35d4c
+  Fabric: 190bf1a6eb65f7500de1347d027d2e59a7e53db1
+  FXForms: 22d5ceafd8ca44d2f2be4827afcf00aaf80184a5
+  SwiftDate: 49ebd4efb5f82336cfc2b1d8a6622f47d4b17370
+  SwiftyJSON: cacfe0373d584585716bd1d43202c24cc66afd65
+
+COCOAPODS: 0.39.0

@@ -1,0 +1,6 @@
+framework module Pods_FlightFareFinder {
+  umbrella header "Pods-FlightFareFinder-umbrella.h"
+
+  export *
+  module * { export * }
+}
